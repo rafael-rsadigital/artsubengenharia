@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO TÉCNICO -->
+    <title>Engenharia Subaquática em Jacareí SP | Limpeza de Reservatórios sem Esvaziar</title>
+    <meta name="description" content="Empresa especializada em engenharia subaquática, limpeza de reservatórios sem esvaziar, inspeção submersa e recuperação estrutural atendendo Jacareí, São José dos Campos, todo o Vale do Paraíba e litoral.">
+    <link rel="canonical" href="https://artsubengenharia.com.br">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artsubengenharia.com.br">
+    <meta property="og:title" content="Art Sub Engenharia Subaquática | Jacareí SP">
+    <meta property="og:description" content="Limpeza de reservatórios e manutenção submersa sem interromper o abastecimento. Tecnologia de mergulho comercial e engenharia.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?q=80&w=1000">
+
+    <!-- Fonts e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --azul-marinho: #001f3f;
+            --azul-escuro: #001326;
+            --cinza-tecnico: #4a4a4a;
+            --amarelo-industrial: #ffcc00;
+            --branco: #ffffff;
+            --transicao: all 0.3s ease-in-out;
+        }
+
+        /* Reset e Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--cinza-tecnico); background-color: #f4f7f9; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 700; color: var(--azul-marinho); }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        header { 
+            position: fixed; width: 100%; top: 0; z-index: 1000; 
+            background: rgba(0, 31, 63, 0.95); padding: 15px 0;
+            transition: var(--transicao); border-bottom: 3px solid var(--amarelo-industrial);
+        }
+        header.scrolled { padding: 8px 0; background: var(--azul-marinho); box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { color: var(--amarelo-industrial); text-decoration: none; font-size: 1.4rem; font-weight: 700; letter-spacing: -1px; }
+        .logo span { color: var(--branco); font-weight: 300; }
+
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { color: var(--branco); text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: var(--transicao); }
+        nav ul li a:hover { color: var(--amarelo-industrial); }
+
+        /* Hero Section */
+        .hero { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,31,63,0.75), rgba(0,31,63,0.75)), url('https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--branco); padding-top: 80px;
+        }
+        .hero-content { max-width: 900px; animation: fadeInUp 1s ease; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; color: var(--branco); }
+        .hero-content p { font-size: 1.25rem; margin-bottom: 35px; font-weight: 300; opacity: 0.9; }
+
+        /* Botões */
+        .btn { 
+            background: var(--amarelo-industrial); color: var(--azul-marinho); 
+            padding: 16px 40px; text-decoration: none; font-weight: 700; 
+            border-radius: 4px; transition: var(--transicao); display: inline-block;
+            border: none; cursor: pointer; text-transform: uppercase; font-size: 0.9rem;
+        }
+        .btn:hover { background: var(--branco); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+        /* Seções */
+        section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-title { font-size: 2.2rem; margin-bottom: 15px; position: relative; padding-bottom: 15px; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70px; height: 4px; background: var(--amarelo-industrial); }
+        .section-subtitle { font-size: 1.1rem; color: var(--cinza-tecnico); max-width: 700px; margin: 0 auto; }
+
+        /* Serviços */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-card { 
+            background: var(--branco); padding: 0 0 40px 0; border-radius: 8px; 
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transicao); border-top: 5px solid transparent;
+            overflow: hidden;
+        }
+        .service-card:hover { transform: translateY(-10px); border-top-color: var(--amarelo-industrial); }
+        .service-card img { 
+            width: 100%; height: 220px; object-fit: cover; 
+            margin-bottom: 25px; border-bottom: 2px solid #eee;
+        }
+        .service-card h3 { margin: 0 20px 15px; font-size: 1.1rem; }
+        .service-card p { margin: 0 25px; font-size: 0.95rem; color: #666; }
+
+        /* Diferenciais */
+        .bg-dark { background: var(--azul-marinho); color: var(--branco); }
+        .bg-dark h2, .bg-dark p { color: var(--branco); }
+        .differentials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; text-align: center; }
+        .diff-item i { font-size: 2.8rem; color: var(--amarelo-industrial); margin-bottom: 20px; }
+        .diff-item h3 { font-size: 1rem; margin-bottom: 10px; color: var(--branco); }
+
+        /* Sobre */
+        .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text h2 { margin-bottom: 20px; font-size: 1.8rem; }
+        .about-text p { margin-bottom: 20px; }
+        .about-image { border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2); border: 5px solid var(--amarelo-industrial); }
+
+        /* FAQ Estilizado */
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-item { background: var(--branco); margin-bottom: 15px; border-radius: 5px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--azul-marinho); transition: var(--transicao); }
+        .faq-question { padding: 22px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: var(--azul-marinho); font-size: 1.1rem; text-transform: none; text-align: left; }
+        .faq-answer { padding: 0 30px 25px; display: none; border-top: 1px solid #eee; padding-top: 20px; font-size: 1rem; color: #444; line-height: 1.7; }
+        .faq-item.active { border-left-color: var(--amarelo-industrial); }
+        .faq-item.active .faq-answer { display: block; }
+
+        /* Regiões */
+        .regions { background: #eef2f5; text-align: center; }
+        .region-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
+        .tag { background: var(--azul-marinho); color: var(--branco); padding: 12px 25px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; }
+
+        /* Contato */
+        .contact-box { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-info i { color: var(--amarelo-industrial); width: 30px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
+
+        /* Footer */
+        footer { background: var(--azul-escuro); color: var(--branco); padding: 70px 0 30px; border-top: 6px solid var(--amarelo-industrial); }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
+        .footer-logo { font-size: 1.5rem; font-weight: 700; color: var(--amarelo-industrial); margin-bottom: 20px; display: block; text-decoration: none; }
+        .footer-col h4 { color: var(--amarelo-industrial); margin-bottom: 25px; font-size: 1rem; }
+        .footer-col p { font-size: 0.85rem; margin-bottom: 10px; opacity: 0.8; }
+        .social-icons a { color: white; font-size: 1.6rem; margin-right: 15px; transition: var(--transicao); }
+        .social-icons a:hover { color: var(--amarelo-industrial); }
+
+        /* WhatsApp */
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 999; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: var(--transicao); }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-split, .contact-box { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+        @media (max-width: 768px) {
+            header .container { flex-direction: column; gap: 15px; }
+            nav ul { gap: 10px; flex-wrap: wrap; justify-content: center; }
+            .section-title { font-size: 1.8rem; }
+            .faq-question { font-size: 1rem; padding: 15px 20px; }
+        }
+    </style>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Art Sub Engenharia Subaquática",
+      "image": "https://images.unsplash.com/photo-1582967788606-a171c1080cb0",
+      "@id": "https://artsubengenharia.com.br",
+      "url": "https://artsubengenharia.com.br",
+      "telephone": "+5512998005945",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sede em Jacareí - Atendimento Nacional",
+        "addressLocality": "Jacareí",
+        "addressRegion": "SP",
+        "postalCode": "12300-000",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -23.3051,
+        "longitude": -45.9672
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://www.instagram.com/artsub.eng/"
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#inicio">ART SUB <span>ENGENHARIA</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">INÍCIO</a></li>
+                    <li><a href="#servicos">SERVIÇOS</a></li>
+                    <li><a href="#diferenciais">DIFERENCIAIS</a></li>
+                    <li><a href="#regioes">REGIÕES</a></li>
+                    <li><a href="#contato">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>SOLUÇÕES EM ENGENHARIA SUBAQUÁTICA SEM ESVAZIAMENTO</h1>
+            <p>A Art Sub une o rigor da Engenharia Civil com a expertise do Mergulho Comercial para realizar limpezas técnicas e inspeções em reservatórios ativos.</p>
+            <a href="#contato" class="btn">Solicitar Orçamento Técnico</a>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Serviços Especializados</h2>
+                <p class="section-subtitle">Onde a Engenharia Civil encontra o fundo do mar para garantir a continuidade operacional do seu negócio.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Mergulhador realizando limpeza de reservatório industrial subaquático sem esvaziamento">
+                    <h3>Limpeza de Reservatórios sem Esvaziar</h3>
+                    <p>Manutenção técnica via sucção subaquática. Garanta a potabilidade sem interromper o abastecimento em hospitais e indústrias.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=600&q=80" alt="Inspeção subaquática fotográfica técnica para diagnóstico estrutural">
+                    <h3>Inspeção Subaquática Fotográfica</h3>
+                    <p>Mapeamentos estruturais detalhados com laudos técnicos. Diagnóstico preciso de fissuras e corrosão com registro em foto e vídeo.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1469504512102-900f29606341?auto=format&fit=crop&w=600&q=80" alt="Recuperação estrutural subaquática em estacas de pontes e cais portuário">
+                    <h3>Recuperação Estrutural Subaquática</h3>
+                    <p>Reparos em pontes, cais e estruturas portuárias com planejamento minucioso de engenharia civil e concretagem submersa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="bg-dark">
+        <div class="container">
+            <div class="about-split">
+                <div class="about-text">
+                    <h2>Mergulho Profissional e Engenharia Civil</h2>
+                    <p>Na ART SUB, unimos duas áreas que caminham lado a lado com precisão: o conhecimento técnico de engenharia e a prática do mergulho profissional.</p>
+                    <p>Nossa equipe é composta por engenheiros civis especializados e mergulhadores treinados para atuar em ambientes extremos, garantindo eficiência e respeito ao meio ambiente.</p>
+                    <div class="differentials-grid" style="margin-top: 30px;">
+                        <div class="diff-item">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Sustentabilidade</h3>
+                            <p>Preservação total da água potável.</p>
+                        </div>
+                        <div class="diff-item">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Segurança</h3>
+                            <p>Certificações NR-33 e NR-35.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Operação de mergulho comercial industrial">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SEO - ART SUB (HTML COMPLETO) -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">FAQ – Perguntas Frequentes</h2>
+                <p class="section-subtitle">Tudo o que você precisa saber sobre manutenção subaquática em reservatórios.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">É possível fazer manutenção em reservatórios sem esvaziar a água? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">Sim. A ART SUB Engenharia Subaquática realiza inspeções, limpeza e reparos em reservatórios de água sem necessidade de esvaziamento. Utilizamos mergulhadores profissionais equipados com sistema de ar independente e técnicas de engenharia subaquática que permitem executar os serviços com segurança, mantendo o abastecimento em funcionamento.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">A presença do mergulhador contamina a água potável? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">Não. O mergulhador utiliza roupa hermética, máscara facial integral e sistema de ar independente, evitando qualquer contato direto com a água. Além disso, todos os equipamentos passam por higienização sanitizante antes das operações, seguindo normas técnicas de segurança e procedimentos de qualidade.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Quais serviços podem ser feitos dentro de um reservatório cheio? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">Entre os serviços realizados pela ART SUB estão inspeções visuais e fotográficas, limpeza subaquática, identificação de fissuras, reparos estruturais, tamponamento de vazamentos, manutenção de válvulas e recuperação de estruturas submersas.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Por que fazer manutenção preventiva em reservatórios de água? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">A manutenção preventiva evita problemas como corrosão, fissuras estruturais e acúmulo de impurezas que podem comprometer a qualidade da água e a integridade do reservatório. Além de aumentar a vida útil da estrutura, reduz custos com reparos emergenciais e garante segurança no abastecimento.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Quais tipos de reservatórios podem receber manutenção subaquática? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">Os serviços podem ser realizados em reservatórios metálicos, reservatórios de concreto, caixas d'água industriais, tanques de armazenamento e outras estruturas hidráulicas que estejam em operação.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Quais setores atendem esse tipo de serviço? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">A ART SUB atende condomínios residenciais, indústrias, hospitais, escolas, empresas de saneamento, órgãos públicos, prefeituras e empreendimentos que dependem de reservatórios de água para operação contínua.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">A empresa oferece atendimento emergencial? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">Sim. A ART SUB Engenharia Subaquática oferece atendimento emergencial 24 horas para situações como vazamentos, danos estruturais e falhas em reservatórios que precisam de intervenção imediata.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Vocês trabalham com contrato de manutenção? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">Sim. Também oferecemos contratos anuais de manutenção preventiva, que permitem inspeções periódicas, planejamento técnico e redução de riscos estruturais ao longo do tempo.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Quais outros serviços de engenharia subaquática são realizados? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">Além da manutenção de reservatórios, realizamos inspeções estruturais submersas, recuperação de fundações, corte e soldagem subaquática, concretagem submersa, montagem de estruturas metálicas e levantamentos técnicos em áreas alagadas.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Onde a ART SUB Engenharia Subaquática atende? <i class="fas fa-plus"></i></h3>
+                    <p class="faq-answer">Atendemos principalmente a região Sudeste do Brasil. Outras regiões podem ser atendidas sob consulta, dependendo da demanda e da complexidade do projeto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regiões -->
+    <section id="regioes" class="regions">
+        <div class="container">
+            <h2 class="section-title">Áreas de Atuação</h2>
+            <p>Sediada em Jacareí, a Art Sub possui logística ágil para atender com excelência o Vale do Paraíba, Litoral e Rio de Janeiro.</p>
+            <div class="region-tags">
+                <span class="tag">JACAREÍ (SEDE)</span>
+                <span class="tag">SJC & VALE DO PARAÍBA</span>
+                <span class="tag">LITORAL NORTE & SUL</span>
+                <span class="tag">RIO DE JANEIRO</span>
+                <span class="tag">OUTRAS REGIÕES SOB CONSULTA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Solicite um Orçamento</h2>
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h3>Atendimento Técnico</h3>
+                    <br>
+                    <p><i class="fas fa-phone"></i> 12 99800-5945</p>
+                    <p><i class="fab fa-whatsapp"></i> 12 99800-5945</p>
+                    <p><i class="fas fa-envelope"></i> contato@artsubengenharia.com.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jacareí - SP (Atendimento Nacional)</p>
+                    <br>
+                    <div style="border-radius: 8px; overflow: hidden; height: 250px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205825.2489051146!2d-45.973631950000005!3d-23.29599545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8407c7775d8d81ef%3A0x4eee7330fa40413d!2sArt%20Sub%20Engenharia%20Subaquatica!5e1!3m2!1spt-BR!2sbr!4v1772922444266!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="#">
+                        <input type="text" placeholder="Nome / Empresa" required>
+                        <input type="email" placeholder="E-mail" required>
+                        <input type="tel" placeholder="WhatsApp" required>
+                        <textarea placeholder="Como podemos ajudar?" rows="6" required></textarea>
+                        <button type="submit" class="btn">Enviar Solicitação</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">ART SUB ENGENHARIA</a>
+                    <p>Unindo Engenharia Civil e Mergulho Profissional com responsabilidade técnica.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/artsub.eng/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <p>Art Sub Engenharia Subaquatica Ltda</p>
+                    <p>CNPJ: 61.072.015/0001-50</p>
+                    <p>Jacareí - SP</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; font-size: 0.75rem; opacity: 0.6;">
+                <p>&copy; 2026 Art Sub Engenharia. Criado por RSA Digital.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5512998005945" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JSON-LD FAQ Page (10 ENTIDADES COMPLETAS) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "É possível fazer manutenção em reservatórios sem esvaziar a água?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A ART SUB Engenharia Subaquática realiza inspeções, limpeza e reparos em reservatórios sem necessidade de esvaziamento, utilizando mergulhadores profissionais e técnicas de engenharia subaquática."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A presença do mergulhador contamina a água potável?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O mergulhador utiliza roupa hermética, máscara facial integral e sistema de ar independente, evitando contato direto com a água. Todos os equipamentos passam por higienização sanitizante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais serviços podem ser feitos dentro de um reservatório cheio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inspeções visuais e fotográficas, limpeza subaquática, identificação de fissuras, reparos estruturais, tamponamento de vazamentos, manutenção de válvulas e recuperação de estruturas submersas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que fazer manutenção preventiva em reservatórios de água?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A manutenção preventiva evita corrosão, fissuras estruturais e acúmulo de impurezas, aumentando a vida útil da estrutura e garantindo segurança no abastecimento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais tipos de reservatórios podem receber manutenção subaquática?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reservatórios metálicos, de concreto, caixas d'água industriais, tanques de armazenamento e outras estruturas hidráulicas operacionais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais setores atendem esse tipo de serviço?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Condomínios residenciais, indústrias, hospitais, escolas, empresas de saneamento e órgãos públicos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A empresa oferece atendimento emergencial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A ART SUB Engenharia Subaquática oferece atendimento emergencial 24 horas para situações críticas envolvendo reservatórios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês trabalham com contrato de manutenção?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Oferecemos contratos anuais de manutenção preventiva para inspeções periódicas e redução de riscos estruturais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais outros serviços de engenharia subaquática são realizados?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inspeções estruturais submersas, recuperação de fundações, corte e soldagem subaquática, concretagem submersa e montagens metálicas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde a ART SUB Engenharia Subaquática atende?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atendemos principalmente a região Sudeste do Brasil. Outras regiões podem ser atendidas sob consulta."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+                
+                const icon = button.querySelector('i');
+                if (faqItem.classList.contains('active')) {
+                    icon.classList.replace('fa-plus', 'fa-minus');
+                } else {
+                    icon.classList.replace('fa-minus', 'fa-plus');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
