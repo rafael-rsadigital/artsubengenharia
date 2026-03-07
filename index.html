@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://artsubengenharia.com.br">
     <meta property="og:title" content="Art Sub Engenharia Subaquática | Jacareí SP">
     <meta property="og:description" content="Limpeza de reservatórios e manutenção submersa sem interromper o abastecimento. Tecnologia de mergulho comercial e engenharia.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?q=80&w=1000">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1469504512102-900f29606341?q=80&w=1000">
 
     <!-- Fonts e Ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,8 +49,14 @@
         header.scrolled { padding: 8px 0; background: var(--azul-marinho); box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         
         .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo a { color: var(--amarelo-industrial); text-decoration: none; font-size: 1.4rem; font-weight: 700; letter-spacing: -1px; }
-        .logo span { color: var(--branco); font-weight: 300; }
+        
+        /* Logo Styling */
+        .logo a { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 50px; width: auto; transition: var(--transicao); }
+        header.scrolled .logo img { height: 40px; }
+        /* Texto alternativo caso não haja imagem */
+        .logo-text { color: var(--amarelo-industrial); font-size: 1.4rem; font-weight: 700; letter-spacing: -1px; margin-left: 10px; }
+        .logo-text span { color: var(--branco); font-weight: 300; }
 
         nav ul { display: flex; list-style: none; gap: 20px; }
         nav ul li a { color: var(--branco); text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: var(--transicao); }
@@ -59,7 +65,7 @@
         /* Hero Section */
         .hero { 
             height: 100vh; 
-            background: linear-gradient(rgba(0,31,63,0.75), rgba(0,31,63,0.75)), url('https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,31,63,0.75), rgba(0,31,63,0.75)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--branco); padding-top: 80px;
         }
         .hero-content { max-width: 900px; animation: fadeInUp 1s ease; }
@@ -129,10 +135,13 @@
         .contact-info i { color: var(--amarelo-industrial); width: 30px; }
         .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
 
+        /* Footer Logo */
+        .footer-logo { display: inline-block; margin-bottom: 20px; }
+        .footer-logo img { height: 60px; width: auto; }
+
         /* Footer */
         footer { background: var(--azul-escuro); color: var(--branco); padding: 70px 0 30px; border-top: 6px solid var(--amarelo-industrial); }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
-        .footer-logo { font-size: 1.5rem; font-weight: 700; color: var(--amarelo-industrial); margin-bottom: 20px; display: block; text-decoration: none; }
         .footer-col h4 { color: var(--amarelo-industrial); margin-bottom: 25px; font-size: 1rem; }
         .footer-col p { font-size: 0.85rem; margin-bottom: 10px; opacity: 0.8; }
         .social-icons a { color: white; font-size: 1.6rem; margin-right: 15px; transition: var(--transicao); }
@@ -166,7 +175,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Art Sub Engenharia Subaquática",
-      "image": "https://images.unsplash.com/photo-1582967788606-a171c1080cb0",
+      "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5",
       "@id": "https://artsubengenharia.com.br",
       "url": "https://artsubengenharia.com.br",
       "telephone": "+5512998005945",
@@ -201,7 +210,11 @@
     <header id="main-header">
         <div class="container nav-container">
             <div class="logo">
-                <a href="#inicio">ART SUB <span>ENGENHARIA</span></a>
+                <a href="#inicio">
+                    <!-- Substitua o src pelo link real do logotipo da Art Sub -->
+                    <img src="https://via.placeholder.com/200x80/001f3f/ffcc00?text=ART+SUB" alt="Logotipo Art Sub Engenharia Subaquática - Jacareí SP">
+                    <div class="logo-text">ART SUB <span>ENGENHARIA</span></div>
+                </a>
             </div>
             <nav>
                 <ul>
@@ -220,7 +233,7 @@
         <div class="hero-content">
             <h1>SOLUÇÕES EM ENGENHARIA SUBAQUÁTICA SEM ESVAZIAMENTO</h1>
             <p>A Art Sub une o rigor da Engenharia Civil com a expertise do Mergulho Comercial para realizar limpezas técnicas e inspeções em reservatórios ativos.</p>
-            <a href="#contato" class="btn">Solicitar Orçamento Técnico</a>
+            <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="btn" target="_blank">Solicitar Orçamento Técnico</a>
         </div>
     </section>
 
@@ -233,17 +246,17 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Mergulhador realizando limpeza de reservatório industrial subaquático sem esvaziamento">
+                    <img src="https://images.unsplash.com/photo-1541888941294-6330456565f4?auto=format&fit=crop&w=600&q=80" alt="Grande reservatório industrial para limpeza subaquática técnica">
                     <h3>Limpeza de Reservatórios sem Esvaziar</h3>
                     <p>Manutenção técnica via sucção subaquática. Garanta a potabilidade sem interromper o abastecimento em hospitais e indústrias.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=600&q=80" alt="Inspeção subaquática fotográfica técnica para diagnóstico estrutural">
+                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=600&q=80" alt="Mergulhador industrial realizando inspeção fotográfica estrutural submersa">
                     <h3>Inspeção Subaquática Fotográfica</h3>
                     <p>Mapeamentos estruturais detalhados com laudos técnicos. Diagnóstico preciso de fissuras e corrosão com registro em foto e vídeo.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1469504512102-900f29606341?auto=format&fit=crop&w=600&q=80" alt="Recuperação estrutural subaquática em estacas de pontes e cais portuário">
+                    <img src="https://images.unsplash.com/photo-1505242844904-209865d1d643?auto=format&fit=crop&w=600&q=80" alt="Recuperação estrutural subaquática em pilares e fundações de cais">
                     <h3>Recuperação Estrutural Subaquática</h3>
                     <p>Reparos em pontes, cais e estruturas portuárias com planejamento minucioso de engenharia civil e concretagem submersa.</p>
                 </div>
@@ -273,7 +286,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Operação de mergulho comercial industrial">
+                    <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80" alt="Operação técnica de mergulho industrial em reservatório">
                 </div>
             </div>
         </div>
@@ -367,7 +380,7 @@
                     <p><i class="fas fa-phone"></i> 12 99800-5945</p>
                     <p><i class="fab fa-whatsapp"></i> 12 99800-5945</p>
                     <p><i class="fas fa-envelope"></i> contato@artsubengenharia.com.br</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Jacareí - SP (Atendimento Nacional)</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jacareí - SP</p>
                     <br>
                     <div style="border-radius: 8px; overflow: hidden; height: 250px;">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205825.2489051146!2d-45.973631950000005!3d-23.29599545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8407c7775d8d81ef%3A0x4eee7330fa40413d!2sArt%20Sub%20Engenharia%20Subaquatica!5e1!3m2!1spt-BR!2sbr!4v1772922444266!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -379,7 +392,7 @@
                         <input type="email" placeholder="E-mail" required>
                         <input type="tel" placeholder="WhatsApp" required>
                         <textarea placeholder="Como podemos ajudar?" rows="6" required></textarea>
-                        <button type="submit" class="btn">Enviar Solicitação</button>
+                        <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="btn" style="width: 100%; text-align: center;" target="_blank">Enviar via WhatsApp</a>
                     </form>
                 </div>
             </div>
@@ -391,7 +404,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <a href="#" class="footer-logo">ART SUB ENGENHARIA</a>
+                    <a href="#inicio" class="footer-logo">
+                        <img src="https://via.placeholder.com/200x80/001f3f/ffcc00?text=ART+SUB" alt="Logotipo Art Sub Engenharia Subaquática">
+                    </a>
                     <p>Unindo Engenharia Civil e Mergulho Profissional com responsabilidade técnica.</p>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/artsub.eng/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -411,7 +426,7 @@
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/5512998005945" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
