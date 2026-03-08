@@ -69,7 +69,7 @@
         nav ul li a:hover { color: var(--amarelo-industrial); }
 
         /* Menu Hamburger */
-        .menu-toggle { display: none; color: var(--branco); font-size: 1.5rem; cursor: pointer; }
+        .menu-toggle { display: none; color: var(--branco); font-size: 1.8rem; cursor: pointer; }
 
         /* Hero */
         .hero { 
@@ -148,6 +148,7 @@
 
         /* Estilos Mobile Específicos */
         @media (max-width: 768px) {
+            .nav-container { padding: 0 10px; } /* Aproxima os elementos do canto */
             .menu-toggle { display: block; }
             nav ul { 
                 display: none; position: absolute; top: 100%; left: 0; width: 100%; 
@@ -213,6 +214,58 @@
           { "@type": "Service", "name": "Manutenção subaquática industrial" }
         ]
       },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "É possível fazer manutenção em reservatórios sem esvaziar a água?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. A ART SUB Engenharia Subaquática realiza inspeções, limpeza e reparos em reservatórios de água sem necessidade de esvaziamento, utilizando mergulhadores profissionais e técnicas de engenharia subaquática." }
+        },
+        {
+          "@type": "Question",
+          "name": "A presença do mergulhador contamina a água potável?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Não. O mergulhador utiliza roupa hermética, máscara facial integral e sistema de ar independente, evitando qualquer contato direto com a água. Além disso, todos os equipamentos passam por higienização sanitizante antes das operações." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais serviços podem ser feitos dentro de um reservatório cheio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Entre os serviços realizados pela ART SUB estão inspeções visuais e fotográficas, limpeza subaquática, identificação de fissuras, reparos estruturais, tamponamento de vazamentos, manutenção de válvulas e recuperação de estruturas submersas." }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que fazer manutenção preventiva em reservatórios de água?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A manutenção preventiva evita problemas como corrosão, fissuras estruturais e acúmulo de impurezas que podem comprometer a qualidade da água e a integridade do reservatório, aumentando a vida útil da estrutura e reduzindo custos com reparos emergenciais." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais tipos de reservatórios podem receber manutenção subaquática?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Os serviços podem ser realizados em reservatórios metálicos, reservatórios de concreto, caixas d'água industriais, tanques de armazenamento e outras estruturas hidráulicas que estejam em operação." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais setores atendem esse tipo de serviço?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A ART SUB atende condomínios residenciais, indústrias, hospitais, escolas, empresas de saneamento, órgãos públicos, prefeituras e empreendimentos que dependem de reservatórios de água para operação contínua." }
+        },
+        {
+          "@type": "Question",
+          "name": "A empresa oferece atendimento emergencial?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. A ART SUB Engenharia Subaquática oferece atendimento emergencial 24 horas para situações como vazamentos, danos estruturais e falhas em reservatórios que precisam de intervenção imediata." }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês trabalham com contrato de manutenção?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. Também oferecemos contratos anuais de manutenção preventiva, que permitem inspeções periódicas, planejamento técnico e redução de riscos estruturais ao longo do tempo." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais outros serviços de engenharia subaquática são realizados?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Além da manutenção de reservatórios, realizamos inspeções estruturais submersas, recuperação de fundações, corte e soldagem subaquática, concretagem submersa, montagem de estruturas metálicas e levantamentos técnicos em áreas alagadas." }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde a ART SUB Engenharia Subaquática atende?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Atendemos principalmente a região Sudeste do Brasil. Outras regiões podem ser atendidas sob consulta, dependendo da demanda e da complexidade do projeto." }
+        }
+      ],
       "sameAs": ["https://www.instagram.com/artsub.eng/"]
     }
     </script>
@@ -222,7 +275,7 @@
     <!-- Lightbox Modal -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span style="position: absolute; top: 15px; right: 25px; color: white; font-size: 35px;">&times;</span>
-        <img class="modal-content" id="imgExpanded">
+        <img loading="lazy" class="modal-content" id="imgExpanded">
     </div>
 
     <!-- Header -->
@@ -230,7 +283,7 @@
         <div class="container nav-container">
             <div class="logo">
                 <a href="#inicio">
-                    <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logotipo Art Sub Engenharia" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
+                    <img loading="lazy" src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logotipo Art Sub Engenharia" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
                     <div class="logo-text">ART SUB <span>ENGENHARIA</span></div>
                 </a>
             </div>
@@ -311,7 +364,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ COMPLETO (10 PERGUNTAS RESTAURADAS) -->
     <section id="faq">
         <div class="container">
             <div class="section-header">
@@ -321,25 +374,44 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">É possível fazer manutenção em reservatórios sem esvaziar a água? <i class="fas fa-plus"></i></div>
-                    <p class="faq-answer">Sim. A ART SUB Engenharia Subaquática realiza inspeções, limpeza e reparos em reservatórios de água sem necessidade de esvaziamento. Utilizamos mergulhadores profissionais equipados com sistema de ar independente e técnicas de engenharia subaquática.</p>
+                    <p class="faq-answer">Sim. A ART SUB Engenharia Subaquática realiza inspeções, limpeza e reparos em reservatórios de água sem necessidade de esvaziamento. Utilizamos mergulhadores profissionais equipados com sistema de ar independente e técnicas de engenharia subaquática que permitem executar os serviços com segurança, mantendo o abastecimento em funcionamento.</p>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">A presença do mergulhador contamina a água potável? <i class="fas fa-plus"></i></div>
-                    <p class="faq-answer">Não. O mergulhador utiliza roupa hermética, máscara facial integral e sistema de ar independente, evitando qualquer contato direto com a água. Equipamentos são higienizados com solução sanitizante antes da operação.</p>
+                    <p class="faq-answer">Não. O mergulhador utiliza roupa hermética, máscara facial integral e sistema de ar independente, evitando qualquer contato direto com a água. Além disso, todos os equipamentos passam por higienização sanitizante antes das operações, seguindo normas técnicas de segurança e procedimentos de qualidade.</p>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Quais serviços podem ser feitos dentro de um reservatório cheio? <i class="fas fa-plus"></i></div>
-                    <p class="faq-answer">Inspeções visuais e fotográficas, limpeza subaquática, identificação de fissuras, reparos estruturais, tamponamento de vazamentos, manutenção de válvulas e recuperação de estruturas submersas.</p>
+                    <p class="faq-answer">Entre os serviços realizados pela ART SUB estão inspeções visuais e fotográficas, limpeza subaquática, identificação de fissuras, reparos estruturais, tamponamento de vazamentos, manutenção de válvulas e recuperação de estruturas submersas.</p>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Por que fazer manutenção preventiva em reservatórios de água? <i class="fas fa-plus"></i></div>
-                    <p class="faq-answer">Evita corrosão, fissuras estruturais e acúmulo de impurezas que comprometem a qualidade da água e a integridade do reservatório, aumentando a vida útil da estrutura e reduzindo custos emergenciais.</p>
+                    <p class="faq-answer">A manutenção preventiva evita problemas como corrosão, fissuras estruturais e acúmulo de impurezas que podem comprometer a qualidade da água e a integridade do reservatório. Além de aumentar a vida útil da estrutura, reduz custos com reparos emergenciais e garante segurança no abastecimento.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quais tipos de reservatórios podem receber manutenção subaquática? <i class="fas fa-plus"></i></div>
+                    <p class="faq-answer">Os serviços podem ser realizados em reservatórios metálicos, reservatórios de concreto, caixas d'água industriais, tanques de armazenamento e outras estruturas hidráulicas que estejam em operação.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quais setores atendem esse tipo de serviço? <i class="fas fa-plus"></i></div>
+                    <p class="faq-answer">A ART SUB atende condomínios residenciais, indústrias, hospitais, escolas, empresas de saneamento, órgãos públicos, prefeituras e empreendimentos que dependem de reservatórios de água para operação contínua.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">A empresa oferece atendimento emergencial? <i class="fas fa-plus"></i></div>
+                    <p class="faq-answer">Sim. A ART SUB Engenharia Subaquática oferece atendimento emergencial 24 horas para situações como vazamentos, danos estruturais e falhas em reservatórios que precisam de intervenção imediata.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Vocês trabalham com contrato de manutenção? <i class="fas fa-plus"></i></div>
+                    <p class="faq-answer">Sim. Também oferecemos contratos anuais de manutenção preventiva, que permitem inspeções periódicas, planejamento técnico e redução de riscos estruturais ao longo do tempo.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quais outros serviços de engenharia subaquática são realizados? <i class="fas fa-plus"></i></div>
+                    <p class="faq-answer">Além da manutenção de reservatórios, realizamos inspeções estruturais submersas, recuperação de fundações, corte e soldagem subaquática, concretagem submersa, montagem de estruturas metálicas e levantamentos técnicos em áreas alagadas.</p>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Onde a ART SUB Engenharia Subaquática atende? <i class="fas fa-plus"></i></div>
-                    <p class="faq-answer">Atendemos principalmente a região Sudeste do Brasil. Outras regiões podem ser atendidas sob consulta, dependendo da demanda do projeto.</p>
+                    <p class="faq-answer">Atendemos principalmente a região Sudeste do Brasil. Outras regiões podem ser atendidas sob consulta, dependendo da demanda e da complexidade do projeto.</p>
                 </div>
-                <!-- ... Outras perguntas mantidas internamente conforme conversa anterior ... -->
             </div>
         </div>
     </section>
@@ -456,8 +528,14 @@
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
                 const isOpen = faqItem.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-                if (!isOpen) faqItem.classList.add('active');
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('i').classList.replace('fa-minus', 'fa-plus');
+                });
+                if (!isOpen) {
+                    faqItem.classList.add('active');
+                    button.querySelector('i').classList.replace('fa-plus', 'fa-minus');
+                }
             });
         });
 
