@@ -16,7 +16,7 @@
     <meta property="og:description" content="Limpeza de reservatórios e manutenção submersa sem interromper o abastecimento. Tecnologia de mergulho comercial e engenharia.">
     <meta property="og:image" content="https://artsubengenharia.com.br/assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg">
 
-    <!-- Preload da imagem hero para performance (LCP) -->
+    <!-- Preload das imagens principais para performance (LCP) -->
     <link rel="preload" as="image" href="assets/img/servico-subaquatico-background.webp">
 
     <!-- Fonts e Ícones -->
@@ -69,13 +69,14 @@
         nav ul li a:hover { color: var(--amarelo-industrial); }
 
         /* Menu Hamburger */
-        .menu-toggle { display: none; color: var(--branco); font-size: 1.8rem; cursor: pointer; }
+        .menu-toggle { display: none; color: var(--branco); font-size: 2rem; cursor: pointer; }
 
-        /* Hero */
+        /* Hero com Efeito Slider */
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('assets/img/servico-subaquatico-background.webp') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--branco); padding-top: 80px;
+            transition: background-image 1s ease-in-out; /* Transição suave entre backgrounds */
         }
         .hero-content h1 { font-size: 3rem; margin-bottom: 20px; color: var(--branco); line-height: 1.2; text-transform: none; padding: 0 10px; }
         .hero-content p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 35px; font-weight: 300; padding: 0 20px; }
@@ -148,8 +149,10 @@
 
         /* Estilos Mobile Específicos */
         @media (max-width: 768px) {
-            .nav-container { padding: 0 10px; } /* Aproxima os elementos do canto */
-            .menu-toggle { display: block; }
+            .container { padding: 0 15px; }
+            .nav-container { padding: 0 5px; } /* Ajustado mais para o canto conforme solicitado */
+            .menu-toggle { display: block; margin-right: 5px; }
+            
             nav ul { 
                 display: none; position: absolute; top: 100%; left: 0; width: 100%; 
                 background: var(--azul-marinho); flex-direction: column; gap: 0;
@@ -302,7 +305,7 @@
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero com Background Slider -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>Engenharia Subaquática em Jacareí SP | Limpeza de Reservatórios sem Esvaziar</h1>
@@ -364,7 +367,7 @@
         </div>
     </section>
 
-    <!-- FAQ COMPLETO (10 PERGUNTAS RESTAURADAS) -->
+    <!-- FAQ -->
     <section id="faq">
         <div class="container">
             <div class="section-header">
@@ -386,7 +389,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Por que fazer manutenção preventiva em reservatórios de água? <i class="fas fa-plus"></i></div>
-                    <p class="faq-answer">A manutenção preventiva evita problemas como corrosão, fissuras estruturais e acúmulo de impurezas que podem comprometer a qualidade da água e a integridade do reservatório. Além de aumentar a vida útil da estrutura, reduz custos com reparos emergenciais e garante segurança no abastecimento.</p>
+                    <p class="faq-answer">A manutenção preventiva evita problemas como corrosão, fissuras estruturais e acúmulo de impurezas que podem comprometer a qualidade da água e a integridade do reservatório, aumentando a vida útil da estrutura e reduzindo custos com reparos emergenciais.</p>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Quais tipos de reservatórios podem receber manutenção subaquática? <i class="fas fa-plus"></i></div>
@@ -499,6 +502,25 @@
     </a>
 
     <script>
+        // Hero Background Slider
+        const heroImages = [
+            'assets/img/servico-subaquatico-background.webp',
+            'assets/img/limpeza-de-reservatorio-sem-esvaziar.jpg',
+            'assets/img/inspecao-subaquatica-fotografica.jpg',
+            'assets/img/recuperacao-estrutural-subaquatica.jpg'
+        ];
+        let currentImgIdx = 0;
+        const heroElement = document.querySelector('.hero');
+
+        function rotateHeroBackground() {
+            currentImgIdx = (currentImgIdx + 1) % heroImages.length;
+            // Mantém o gradiente de overlay para legibilidade do texto
+            heroElement.style.backgroundImage = `linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('${heroImages[currentImgIdx]}')`;
+        }
+
+        // Inicia o slider após o carregamento
+        setInterval(rotateHeroBackground, 5000);
+
         // Menu Mobile Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu').querySelector('ul');
