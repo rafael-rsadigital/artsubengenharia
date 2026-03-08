@@ -40,6 +40,9 @@
 
     <!-- Preloads e Preconnects para Performance -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="preload" as="image" href="assets/img/servico-subaquatico-background.webp">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -200,7 +203,7 @@
         
         .collapsible-regions { max-width: 800px; margin: 0 auto; text-align: left; }
         details { background: var(--branco); margin-bottom: 10px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #ddd; }
-        summary { padding: 15px 20px; cursor: pointer; font-weight: 700; color: var(--azul-marinho); list-style: none; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+        summary { padding: 15px 20px; cursor: pointer; font-weight: 700; color: var(--azul-marinho); list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
         summary:hover { background: #f9f9f9; }
         summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 0.8rem; transition: transform 0.3s; }
         details[open] summary::after { transform: rotate(180deg); }
@@ -278,7 +281,7 @@
         }
     </style>
 
-    <!-- SCHEMA.ORG COMPLETADO (LocalBusiness + WebSite + BreadcrumbList) -->
+    <!-- SCHEMA.ORG COMPLETADO (LocalBusiness + WebSite + BreadcrumbList + FAQ + Services) -->
     <script type="application/ld+json">
     [
       {
@@ -325,19 +328,21 @@
             { "@type": "Service", "name": "Manutenção subaquática industrial" }
           ]
         },
-        "mainEntity": [
-          { "@type": "Question", "name": "É possível fazer manutenção em reservatórios sem esvaziar a água?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A ART SUB realiza inspeções e reparos sem esvaziamento utilizando técnicas de engenharia subaquática." }},
-          { "@type": "Question", "name": "A presença do mergulhador contamina a água potável?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Equipamentos herméticos e higienizados garantem a segurança total da água." }},
-          { "@type": "Question", "name": "Quais serviços podem ser feitos dentro de um reservatório cheio?", "acceptedAnswer": { "@type": "Answer", "text": "Limpeza, inspeção fotográfica, reparo estrutural e manutenção de válvulas." }},
-          { "@type": "Question", "name": "Por que fazer manutenção preventiva?", "acceptedAnswer": { "@type": "Answer", "text": "Evita corrosão, fissuras e contaminação, além de reduzir custos emergenciais." }},
-          { "@type": "Question", "name": "Quais tipos de reservatórios?", "acceptedAnswer": { "@type": "Answer", "text": "Metálicos, concreto e tanques industriais em operação." }},
-          { "@type": "Question", "name": "Quais setores atendem?", "acceptedAnswer": { "@type": "Answer", "text": "Condomínios, indústrias, hospitais e órgãos públicos." }},
-          { "@type": "Question", "name": "Oferecem atendimento emergencial?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, atendimento 24 horas para situações críticas." }},
-          { "@type": "Question", "name": "Trabalham com contrato de manutenção?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, oferecemos contratos anuais de manutenção preventiva." }},
-          { "@type": "Question", "name": "Quais outros serviços?", "acceptedAnswer": { "@type": "Answer", "text": "Recuperação de fundações, soldagem e montagens submersas." }},
-          { "@type": "Question", "name": "Onde atendem?", "acceptedAnswer": { "@type": "Answer", "text": "Principalmente Sudeste do Brasil, com outras regiões sob consulta." }}
-        ],
         "sameAs": ["https://www.instagram.com/artsub.eng/"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Limpeza de reservatórios sem esvaziar",
+        "provider": { "@type": "LocalBusiness", "name": "Art Sub Engenharia Subaquática" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Vale do Paraíba" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Inspeção subaquática fotográfica",
+        "provider": { "@type": "LocalBusiness", "name": "Art Sub Engenharia Subaquática" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Litoral de São Paulo" }
       },
       {
         "@context": "https://schema.org",
@@ -359,6 +364,22 @@
           "name": "Início",
           "item": "https://artsubengenharia.com.br/"
         }]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "É possível fazer manutenção em reservatórios sem esvaziar a água?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A ART SUB realiza inspeções e reparos sem esvaziamento utilizando técnicas de engenharia subaquática." }},
+          { "@type": "Question", "name": "A presença do mergulhador contamina a água potável?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Equipamentos herméticos e higienizados garantem a segurança total da água." }},
+          { "@type": "Question", "name": "Quais serviços podem ser feitos dentro de um reservatório cheio?", "acceptedAnswer": { "@type": "Answer", "text": "Limpeza, inspeção fotográfica, reparo estrutural e manutenção de válvulas." }},
+          { "@type": "Question", "name": "Por que fazer manutenção preventiva?", "acceptedAnswer": { "@type": "Answer", "text": "Evita corrosão, fissuras e contaminação, além de reduzir custos emergenciais." }},
+          { "@type": "Question", "name": "Quais tipos de reservatórios?", "acceptedAnswer": { "@type": "Answer", "text": "Metálicos, concreto e tanques industriais em operação." }},
+          { "@type": "Question", "name": "Quais setores atendem?", "acceptedAnswer": { "@type": "Answer", "text": "Condomínios, indústrias, hospitais e órgãos públicos." }},
+          { "@type": "Question", "name": "Oferecem atendimento emergencial?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, atendimento 24 horas para situações críticas." }},
+          { "@type": "Question", "name": "Trabalham com contrato de manutenção?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, oferecemos contratos anuais de manutenção preventiva." }},
+          { "@type": "Question", "name": "Quais outros serviços?", "acceptedAnswer": { "@type": "Answer", "text": "Recuperação de fundações, soldagem e montagens submersas." }},
+          { "@type": "Question", "name": "Onde atendem?", "acceptedAnswer": { "@type": "Answer", "text": "Principalmente Sudeste do Brasil, com outras regiões sob consulta." }}
+        ]
       }
     ]
     </script>
@@ -376,7 +397,7 @@
         <div class="container nav-container">
             <div class="logo">
                 <a href="#inicio">
-                    <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logotipo Art Sub Engenharia Subaquática em Jacareí SP" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
+                    <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Art Sub Engenharia Subaquática – serviços de engenharia subaquática em Jacareí SP" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
                     <div class="logo-text">ART SUB <span>ENGENHARIA</span></div>
                 </a>
             </div>
@@ -399,16 +420,16 @@
     <section id="inicio" class="hero">
         <div class="bubbles" id="bubble-container"></div>
         <div class="hero-content">
-            <h1>Engenharia Subaquática em Jacareí SP para Reservatórios e Estruturas Submersas</h1>
+            <h1>Engenharia Subaquática em Jacareí SP – Limpeza de Reservatórios e Estruturas Submersas</h1>
             <p id="hero-rotating-text" class="hero-copy fade show">Limpeza de Reservatórios sem Esvaziar</p>
             <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="btn" target="_blank">Solicitar Orçamento Técnico</a>
         </div>
     </section>
 
-    <!-- Serviços -->
+    <!-- Serviços (Título Otimizado) -->
     <section id="servicos" class="container">
         <div class="section-header">
-            <h2 class="section-title">Serviços Especializados</h2>
+            <h2 class="section-title">Serviços de Engenharia Subaquática em Jacareí e Vale do Paraíba</h2>
             <p>Engenharia Civil e tecnologia subaquática para garantir a continuidade operacional. Clique para ampliar.</p>
         </div>
         <div class="services-grid">
@@ -458,7 +479,7 @@
         </div>
     </section>
 
-    <!-- FAQ COMPLETO (10 PERGUNTAS) -->
+    <!-- FAQ -->
     <section id="faq">
         <div class="container">
             <div class="section-header">
@@ -513,7 +534,7 @@
     <!-- Regiões (SEO REGIONAL REFORÇADO) -->
     <section id="regioes" class="regions">
         <div class="container">
-            <h2 class="section-title">Engenharia Subaquática no Vale do Paraíba e Litoral de SP</h2>
+            <h2 class="section-title">Onde Atuamos – Engenharia Subaquática no Vale do Paraíba e Litoral de SP</h2>
             <p class="regions-intro">
                 A ART SUB atende empresas, condomínios e indústrias em diversas cidades do interior de São Paulo, litoral e regiões próximas.
             </p>
@@ -579,7 +600,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logo Art Sub Engenharia Subaquática" class="footer-logo" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
+            <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Art Sub Engenharia Subaquática" class="footer-logo" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
             <p>ART SUB ENGENHARIA SUBAQUÁTICA LTDA</p>
             <p>CNPJ: 61.072.015/0001-50 | Jacareí - SP</p>
             <div class="rsa-credit">
@@ -591,14 +612,14 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float Corrigido -->
+    <!-- WhatsApp Float -->
     <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // SEO: Loading Lazy Global para todas as imagens
-        document.querySelectorAll("img").forEach(img => {
+        // SEO: Loading Lazy Global (exceto Hero e Logo)
+        document.querySelectorAll("img:not(header img, .hero img)").forEach(img => {
             img.loading = "lazy";
         });
 
