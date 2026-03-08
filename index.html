@@ -16,6 +16,9 @@
     <meta property="og:description" content="Limpeza de reservatórios e manutenção submersa sem interromper o abastecimento. Tecnologia de mergulho comercial e engenharia.">
     <meta property="og:image" content="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg">
 
+    <!-- Preload da imagem hero para performance (LCP) -->
+    <link rel="preload" as="image" href="assets/img/servico-subaquatico-background.webp">
+
     <!-- Fonts e Ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +43,7 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header (Voltou para Azul conforme solicitado) */
+        /* Header */
         header { 
             position: fixed; width: 100%; top: 0; z-index: 1000; 
             background: var(--azul-marinho); padding: 15px 0;
@@ -65,13 +68,13 @@
         nav ul li a { color: var(--branco); text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: var(--transicao); }
         nav ul li a:hover { color: var(--amarelo-industrial); }
 
-        /* Hero (Usando servico-subaquatico-background.webp) */
+        /* Hero */
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('assets/img/servico-subaquatico-background.webp') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--branco); padding-top: 80px;
         }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--branco); line-height: 1.1; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--branco); line-height: 1.1; text-transform: none; }
         .hero-content p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 35px; font-weight: 300; }
         .btn { background: var(--amarelo-industrial); color: var(--azul-marinho); padding: 16px 40px; text-decoration: none; font-weight: 700; border-radius: 4px; transition: var(--transicao); display: inline-block; text-transform: uppercase; border: none; cursor: pointer; }
         .btn:hover { background: var(--branco); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
@@ -81,7 +84,7 @@
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-title { font-size: 2.2rem; margin-bottom: 10px; }
 
-        /* Serviços com Clique para Ampliar */
+        /* Serviços */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .service-card { background: var(--branco); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; padding-bottom: 30px; transition: var(--transicao); border-top: 5px solid transparent; }
         .service-card:hover { transform: translateY(-10px); border-top-color: var(--amarelo-industrial); }
@@ -90,7 +93,7 @@
         .service-card h3 { font-size: 1.1rem; padding: 0 15px 10px; }
         .service-card p { font-size: 0.95rem; padding: 0 20px; color: #666; }
 
-        /* Mergulho e Engenharia (Usando servico-subaquatico-background.webp) */
+        /* Mergulho e Engenharia */
         .about-engineering { background: var(--azul-marinho); color: var(--branco); }
         .about-engineering h2 { color: var(--branco); margin-bottom: 30px; text-align: left; }
         .about-engineering p { margin-bottom: 25px; font-size: 1rem; opacity: 0.9; }
@@ -103,7 +106,7 @@
         .about-img-box { border: 4px solid var(--amarelo-industrial); border-radius: 8px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
         .about-img-box img { width: 100%; display: block; }
 
-        /* FAQ Estilizado */
+        /* FAQ */
         .faq-container { max-width: 900px; margin: 0 auto; }
         .faq-item { background: var(--branco); margin-bottom: 12px; border-radius: 5px; border-left: 5px solid var(--azul-marinho); transition: var(--transicao); }
         .faq-question { padding: 20px 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: var(--azul-marinho); font-size: 1rem; }
@@ -111,15 +114,21 @@
         .faq-item.active { border-left-color: var(--amarelo-industrial); }
         .faq-item.active .faq-answer { display: block; }
 
-        /* Áreas de Atuação */
+        /* Regiões Expansíveis (SEO LOCAL FORTE) */
         .regions { background: #eef2f5; text-align: center; }
         .regions .section-title { position: relative; display: inline-block; padding-bottom: 15px; margin-bottom: 20px; }
         .regions .section-title::after { content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background: var(--amarelo-industrial); }
-        .regions p { max-width: 800px; margin: 0 auto 40px; }
-        .tags-wrapper { display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .tags-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .tag { background: var(--azul-marinho); color: var(--branco); padding: 12px 30px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; transition: var(--transicao); }
-        .tag:hover { background: var(--amarelo-industrial); color: var(--azul-marinho); }
+        .regions-intro { max-width: 900px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--azul-marinho); font-weight: 400; }
+        
+        .collapsible-regions { max-width: 800px; margin: 0 auto; text-align: left; }
+        details { background: var(--branco); margin-bottom: 10px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #ddd; }
+        summary { padding: 15px 20px; cursor: pointer; font-weight: 700; color: var(--azul-marinho); list-style: none; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+        summary:hover { background: #f9f9f9; }
+        summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 0.8rem; transition: transform 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        details p { padding: 15px 20px; border-top: 1px solid #eee; background: #fff; color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+        .regions-footer { margin-top: 30px; font-style: italic; color: #666; font-size: 0.95rem; }
 
         /* Contato */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
@@ -147,11 +156,11 @@
         }
     </style>
 
-    <!-- Schema.org LocalBusiness -->
+    <!-- SCHEMA.ORG COMPLETADO (LocalBusiness + Organization + OfferCatalog) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "Organization"],
       "name": "Art Sub Engenharia Subaquática",
       "image": "assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg",
       "@id": "https://artsubengenharia.com.br",
@@ -169,6 +178,28 @@
         "@type": "GeoCoordinates",
         "latitude": -23.3051,
         "longitude": -45.9672
+      },
+      "areaServed": [
+        "Vale do Paraíba",
+        "Litoral Norte de São Paulo",
+        "Litoral Sul de São Paulo",
+        "Sul de Minas",
+        "Sul do Rio de Janeiro"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Engenharia Subaquática",
+        "itemListElement": [
+          { "@type": "Service", "name": "Limpeza de reservatórios sem esvaziar" },
+          { "@type": "Service", "name": "Inspeção subaquática fotográfica" },
+          { "@type": "Service", "name": "Inspeção técnica com laudo de engenharia" },
+          { "@type": "Service", "name": "Recuperação estrutural submersa" },
+          { "@type": "Service", "name": "Manutenção de estruturas hidráulicas" },
+          { "@type": "Service", "name": "Inspeção de caixas d'água industriais" },
+          { "@type": "Service", "name": "Inspeção de barragens e tanques" },
+          { "@type": "Service", "name": "Serviços de mergulho comercial" },
+          { "@type": "Service", "name": "Manutenção subaquática industrial" }
+        ]
       },
       "sameAs": ["https://www.instagram.com/artsub.eng/"]
     }
@@ -203,10 +234,10 @@
         </div>
     </header>
 
-    <!-- Hero (Imagem servico-subaquatico-background.webp) -->
+    <!-- Hero -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>SOLUÇÕES EM ENGENHARIA SUBAQUÁTICA SEM ESVAZIAMENTO</h1>
+            <h1>Engenharia Subaquática e Limpeza de Reservatórios sem Esvaziar em Jacareí SP</h1>
             <p>A Art Sub une o rigor da Engenharia Civil com a expertise do Mergulho Comercial para realizar limpezas técnicas e inspeções em reservatórios ativos.</p>
             <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="btn" target="_blank">Solicitar Orçamento Técnico</a>
         </div>
@@ -220,24 +251,24 @@
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <img src="assets/img/limpeza-de-reservatorio-sem-esvaziar.jpg" alt="Limpeza de reservatório sem esvaziar" onclick="expandImage(this)">
+                <img loading="lazy" src="assets/img/limpeza-de-reservatorio-sem-esvaziar.jpg" alt="Limpeza de reservatório sem esvaziar" onclick="expandImage(this)">
                 <h3>Limpeza de Reservatórios sem Esvaziar</h3>
                 <p>Manutenção via sucção subaquática preservando a potabilidade e o abastecimento de hospitais e indústrias.</p>
             </div>
             <div class="service-card">
-                <img src="assets/img/inspecao-subaquatica-fotografica.jpg" alt="Inspeção subaquática fotográfica" onclick="expandImage(this)">
+                <img loading="lazy" src="assets/img/inspecao-subaquatica-fotografica.jpg" alt="Inspeção subaquática fotográfica" onclick="expandImage(this)">
                 <h3>Inspeção Subaquática Fotográfica</h3>
                 <p>Diagnóstico estrutural completo com laudos técnicos e registro em alta definição de fissuras e corrosão.</p>
             </div>
             <div class="service-card">
-                <img src="assets/img/recuperacao-estrutural-subaquatica.jpg" alt="Recuperação estrutural subaquática" onclick="expandImage(this)">
+                <img loading="lazy" src="assets/img/recuperacao-estrutural-subaquatica.jpg" alt="Recuperação estrutural subaquática" onclick="expandImage(this)">
                 <h3>Recuperação Estrutural Subaquática</h3>
                 <p>Reparos em pontes, cais e estruturas portuárias com planejamento de engenharia civil e concretagem submersa.</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção Mergulho e Engenharia (Imagem servico-subaquatico-background.webp) -->
+    <!-- Diferenciais -->
     <section id="diferenciais" class="about-engineering">
         <div class="container">
             <div class="about-grid">
@@ -260,13 +291,13 @@
                     </div>
                 </div>
                 <div class="about-img-box">
-                    <img src="assets/img/servico-subaquatico-background.webp" alt="Equipamentos técnicos de engenharia Art Sub" onerror="this.src='https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=800'">
+                    <img loading="lazy" src="assets/img/servico-subaquatico-background.webp" alt="Equipamentos técnicos de engenharia Art Sub" onerror="this.src='https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=800'">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ COMPLETO (10 PERGUNTAS) -->
+    <!-- FAQ -->
     <section id="faq">
         <div class="container">
             <div class="section-header">
@@ -291,7 +322,7 @@
                     <p class="faq-answer">Evita corrosão, fissuras estruturais e acúmulo de impurezas que comprometem a qualidade da água e a integridade do reservatório, aumentando a vida útil da estrutura e reduzindo custos emergenciais.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Quais tipos de reservatórios podem receber manutenção subaquática? <i class="fas fa-plus"></i></div>
+                    <div class="faq-question">Quais tipos de reservatórios atendidos? <i class="fas fa-plus"></i></div>
                     <p class="faq-answer">Reservatórios metálicos, de concreto, caixas d'água industriais, tanques de armazenamento e outras estruturas hidráulicas operacionais.</p>
                 </div>
                 <div class="faq-item">
@@ -318,22 +349,44 @@
         </div>
     </section>
 
-    <!-- Áreas de Atuação -->
+    <!-- Áreas de Atuação (MELHORADO PARA SEO LOCAL) -->
     <section id="regioes" class="regions">
         <div class="container">
             <h2 class="section-title">ÁREAS DE ATUAÇÃO</h2>
-            <p>Sediada em Jacareí, a Art Sub possui logística ágil para atender com excelência o Vale do Paraíba, Litoral e Rio de Janeiro.</p>
-            <div class="tags-wrapper">
-                <div class="tags-row">
-                    <span class="tag">JACAREÍ (SEDE)</span>
-                    <span class="tag">SJC & VALE DO PARAÍBA</span>
-                    <span class="tag">LITORAL NORTE & SUL</span>
-                    <span class="tag">RIO DE JANEIRO</span>
-                </div>
-                <div class="tags-row">
-                    <span class="tag">OUTRAS REGIÕES SOB CONSULTA</span>
-                </div>
+            <p class="regions-intro">
+                A ART SUB atende empresas, condomínios e indústrias em diversas cidades do interior de São Paulo, litoral e regiões próximas.
+            </p>
+            
+            <div class="collapsible-regions">
+                <details>
+                    <summary>VALE DO PARAÍBA</summary>
+                    <p>Jacareí, São José dos Campos, Taubaté, Caçapava, Pindamonhangaba, Guaratinguetá, Aparecida, Lorena, Cruzeiro, Tremembé.</p>
+                </details>
+
+                <details>
+                    <summary>LITORAL NORTE DE SÃO PAULO</summary>
+                    <p>Caraguatatuba, Ubatuba, Ilhabela, São Sebastião.</p>
+                </details>
+
+                <details>
+                    <summary>LITORAL SUL DE SÃO PAULO</summary>
+                    <p>Santos, São Vicente, Praia Grande, Guarujá, Itanhaém, Peruíbe.</p>
+                </details>
+
+                <details>
+                    <summary>SUL DE MINAS</summary>
+                    <p>Pouso Alegre, Itajubá, Varginha, Santa Rita do Sapucaí, Poços de Caldas.</p>
+                </details>
+
+                <details>
+                    <summary>SUL DO RIO DE JANEIRO</summary>
+                    <p>Resende, Volta Redonda, Barra Mansa, Angra dos Reis, Paraty.</p>
+                </details>
             </div>
+
+            <p class="regions-footer">
+                Atendemos também projetos especiais em outras regiões do Brasil sob consulta.
+            </p>
         </div>
     </section>
 
@@ -365,7 +418,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logo Art Sub" class="footer-logo" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
+            <img loading="lazy" src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logo Art Sub" class="footer-logo" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
             <p>ART SUB ENGENHARIA SUBAQUÁTICA LTDA</p>
             <p>CNPJ: 61.072.015/0001-50 | Jacareí - SP</p>
             <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
@@ -379,7 +432,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- JSON-LD FAQ Page (10 QUESTÕES COMPLETAS) -->
+    <!-- JSON-LD FAQ Page -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
