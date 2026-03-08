@@ -26,7 +26,6 @@
         :root {
             --azul-marinho: #001f3f;
             --azul-escuro: #000c1a;
-            --preto-menu: #000000;
             --amarelo-industrial: #ffcc00;
             --branco: #ffffff;
             --cinza-claro: #f4f7f9;
@@ -41,10 +40,10 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header (Conforme image_c64313.png) */
+        /* Header (Voltou para Azul conforme solicitado) */
         header { 
             position: fixed; width: 100%; top: 0; z-index: 1000; 
-            background: var(--preto-menu); padding: 15px 0;
+            background: var(--azul-marinho); padding: 15px 0;
             transition: var(--transicao); border-bottom: 3px solid var(--amarelo-industrial);
         }
         header.scrolled { padding: 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
@@ -66,10 +65,10 @@
         nav ul li a { color: var(--branco); text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: var(--transicao); }
         nav ul li a:hover { color: var(--amarelo-industrial); }
 
-        /* Hero */
+        /* Hero (Usando servico-subaquatico-background.webp) */
         .hero { 
             height: 100vh; 
-            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('assets/img/servico-subaquatico-background.webp') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--branco); padding-top: 80px;
         }
         .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--branco); line-height: 1.1; }
@@ -82,15 +81,16 @@
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-title { font-size: 2.2rem; margin-bottom: 10px; }
 
-        /* Serviços */
+        /* Serviços com Clique para Ampliar */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .service-card { background: var(--branco); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; padding-bottom: 30px; transition: var(--transicao); border-top: 5px solid transparent; }
         .service-card:hover { transform: translateY(-10px); border-top-color: var(--amarelo-industrial); }
-        .service-card img { width: 100%; height: 200px; object-fit: cover; margin-bottom: 20px; }
+        .service-card img { width: 100%; height: 200px; object-fit: cover; margin-bottom: 20px; cursor: pointer; transition: opacity 0.3s; }
+        .service-card img:hover { opacity: 0.8; }
         .service-card h3 { font-size: 1.1rem; padding: 0 15px 10px; }
         .service-card p { font-size: 0.95rem; padding: 0 20px; color: #666; }
 
-        /* Mergulho e Engenharia (Conforme image_c63c08.png) */
+        /* Mergulho e Engenharia (Usando servico-subaquatico-background.webp) */
         .about-engineering { background: var(--azul-marinho); color: var(--branco); }
         .about-engineering h2 { color: var(--branco); margin-bottom: 30px; text-align: left; }
         .about-engineering p { margin-bottom: 25px; font-size: 1rem; opacity: 0.9; }
@@ -101,6 +101,7 @@
         .feature-item h3 { font-size: 0.9rem; color: var(--branco); margin-bottom: 5px; }
         .feature-item p { font-size: 0.85rem; }
         .about-img-box { border: 4px solid var(--amarelo-industrial); border-radius: 8px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+        .about-img-box img { width: 100%; display: block; }
 
         /* FAQ Estilizado */
         .faq-container { max-width: 900px; margin: 0 auto; }
@@ -110,7 +111,7 @@
         .faq-item.active { border-left-color: var(--amarelo-industrial); }
         .faq-item.active .faq-answer { display: block; }
 
-        /* Áreas de Atuação (Conforme image_c63fac.png) */
+        /* Áreas de Atuação */
         .regions { background: #eef2f5; text-align: center; }
         .regions .section-title { position: relative; display: inline-block; padding-bottom: 15px; margin-bottom: 20px; }
         .regions .section-title::after { content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background: var(--amarelo-industrial); }
@@ -129,11 +130,16 @@
 
         /* Footer */
         footer { background: var(--azul-escuro); color: var(--branco); padding: 60px 0 30px; border-top: 5px solid var(--amarelo-industrial); text-align: center; }
-        .footer-logo { height: 70px; width: 70px; border-radius: 50%; border: 2px solid var(--amarelo-industrial); margin-bottom: 20px; }
+        .footer-logo { height: 70px; width: 70px; border-radius: 50%; border: 2px solid var(--amarelo-industrial); margin-bottom: 20px; object-fit: cover; }
 
         /* WhatsApp */
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: var(--transicao); }
         .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Lightbox Modal */
+        .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: pointer; }
+        .modal-content { max-width: 90%; max-height: 90%; border: 4px solid var(--amarelo-industrial); border-radius: 8px; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        .close-modal { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; }
 
         @media (max-width: 992px) {
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -170,12 +176,18 @@
 </head>
 <body>
 
+    <!-- Lightbox Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgExpanded">
+    </div>
+
     <!-- Header -->
     <header id="main-header">
         <div class="container nav-container">
             <div class="logo">
                 <a href="#inicio">
-                    <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logotipo Art Sub Engenharia" onerror="this.src='https://via.placeholder.com/100/000000/ffcc00?text=AS'">
+                    <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logotipo Art Sub Engenharia" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
                     <div class="logo-text">ART SUB <span>ENGENHARIA</span></div>
                 </a>
             </div>
@@ -191,7 +203,7 @@
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero (Imagem servico-subaquatico-background.webp) -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>SOLUÇÕES EM ENGENHARIA SUBAQUÁTICA SEM ESVAZIAMENTO</h1>
@@ -204,28 +216,28 @@
     <section id="servicos" class="container">
         <div class="section-header">
             <h2 class="section-title">Serviços Especializados</h2>
-            <p>Engenharia Civil e tecnologia subaquática para garantir a continuidade operacional.</p>
+            <p>Engenharia Civil e tecnologia subaquática para garantir a continuidade operacional. Clique nas imagens para ampliar.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <img src="assets/img/limpeza-de-reservatorio-sem-esvaziar.jpg" alt="Limpeza de reservatório sem esvaziar" onerror="this.src='https://images.unsplash.com/photo-1541888941294-6330456565f4?q=80&w=600'">
+                <img src="assets/img/limpeza-de-reservatorio-sem-esvaziar.jpg" alt="Limpeza de reservatório sem esvaziar" onclick="expandImage(this)">
                 <h3>Limpeza de Reservatórios sem Esvaziar</h3>
                 <p>Manutenção via sucção subaquática preservando a potabilidade e o abastecimento de hospitais e indústrias.</p>
             </div>
             <div class="service-card">
-                <img src="assets/img/inspecao-subaquatica-fotografica.jpg" alt="Inspeção subaquática fotográfica" onerror="this.src='https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=600'">
+                <img src="assets/img/inspecao-subaquatica-fotografica.jpg" alt="Inspeção subaquática fotográfica" onclick="expandImage(this)">
                 <h3>Inspeção Subaquática Fotográfica</h3>
                 <p>Diagnóstico estrutural completo com laudos técnicos e registro em alta definição de fissuras e corrosão.</p>
             </div>
             <div class="service-card">
-                <img src="assets/img/recuperacao-estrutural-subaquatica.jpg" alt="Recuperação estrutural subaquática" onerror="this.src='https://images.unsplash.com/photo-1505242844904-209865d1d643?q=80&w=600'">
+                <img src="assets/img/recuperacao-estrutural-subaquatica.jpg" alt="Recuperação estrutural subaquática" onclick="expandImage(this)">
                 <h3>Recuperação Estrutural Subaquática</h3>
                 <p>Reparos em pontes, cais e estruturas portuárias com planejamento de engenharia civil e concretagem submersa.</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção Mergulho e Engenharia (RESTAURADA CONFORME image_c63c08.png) -->
+    <!-- Seção Mergulho e Engenharia (Imagem servico-subaquatico-background.webp) -->
     <section id="diferenciais" class="about-engineering">
         <div class="container">
             <div class="about-grid">
@@ -248,8 +260,7 @@
                     </div>
                 </div>
                 <div class="about-img-box">
-                    <!-- Imagem do microscópio/técnica do print -->
-                    <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80" alt="Equipamentos técnicos de engenharia Art Sub">
+                    <img src="assets/img/servico-subaquatico-background.webp" alt="Equipamentos técnicos de engenharia Art Sub" onerror="this.src='https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=800'">
                 </div>
             </div>
         </div>
@@ -307,7 +318,7 @@
         </div>
     </section>
 
-    <!-- Áreas de Atuação (RESTAURADA CONFORME image_c63fac.png) -->
+    <!-- Áreas de Atuação -->
     <section id="regioes" class="regions">
         <div class="container">
             <h2 class="section-title">ÁREAS DE ATUAÇÃO</h2>
@@ -354,7 +365,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logo Art Sub" class="footer-logo" onerror="this.src='https://via.placeholder.com/100/000000/ffcc00?text=AS'">
+            <img src="assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg" alt="Logo Art Sub" class="footer-logo" onerror="this.src='https://via.placeholder.com/100/001f3f/ffcc00?text=AS'">
             <p>ART SUB ENGENHARIA SUBAQUÁTICA LTDA</p>
             <p>CNPJ: 61.072.015/0001-50 | Jacareí - SP</p>
             <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
@@ -416,7 +427,7 @@
         },
         {
           "@type": "Question",
-          "name": "Quais setores atendidos?",
+          "name": "Quais setores atendem esse tipo de serviço?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Condomínios, indústrias, hospitais, escolas e órgãos públicos."
@@ -475,7 +486,6 @@
                 const faqItem = button.parentElement;
                 const isOpen = faqItem.classList.contains('active');
                 
-                // Fecha outros
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('active');
                     item.querySelector('i').classList.replace('fa-minus', 'fa-plus');
@@ -487,6 +497,18 @@
                 }
             });
         });
+
+        // Lightbox Functions
+        function expandImage(img) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("imgExpanded");
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
     </script>
 </body>
 </html>
