@@ -69,23 +69,72 @@
         nav ul li a:hover { color: var(--amarelo-industrial); }
 
         /* Menu Hamburger */
-        .menu-toggle { display: none; color: var(--branco); font-size: 2.2rem; cursor: pointer; }
+        .menu-toggle { display: none; color: var(--branco); font-size: 2.2rem; cursor: pointer; border: none; background: none; outline: none; }
 
-        /* Hero */
+        /* Hero com Efeito Subaquático */
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('assets/img/servico-subaquatico-background.webp') no-repeat center center/cover;
+            background-attachment: fixed;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--branco); padding-top: 80px;
+            animation: underwaterMovement 40s linear infinite; /* Movimento lento simulando água */
+            position: relative;
+            overflow: hidden;
         }
+
+        @keyframes underwaterMovement {
+            0% { background-position: 50% 50%; }
+            25% { background-position: 52% 48%; }
+            50% { background-position: 48% 52%; }
+            75% { background-position: 51% 51%; }
+            100% { background-position: 50% 50%; }
+        }
+
+        /* Bolhas de Fundo */
+        .bubbles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .bubble { position: absolute; bottom: -20px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; animation: rise 15s infinite ease-in; }
+        @keyframes rise {
+            0% { bottom: -20px; transform: translateX(0); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { bottom: 110%; transform: translateX(50px); opacity: 0; }
+        }
+
+        .hero-content { position: relative; z-index: 2; }
         .hero-content h1 { font-size: 3rem; margin-bottom: 10px; color: var(--branco); line-height: 1.2; text-transform: none; padding: 0 10px; }
         
-        /* Texto Rotativo com Fade */
-        .hero-copy { font-size: 1.3rem; max-width: 800px; margin: 0 auto 35px; font-weight: 400; color: var(--amarelo-industrial); min-height: 1.6em; }
+        /* Texto Rotativo Estável */
+        .hero-copy { 
+            font-size: 1.3rem; 
+            max-width: 800px; 
+            margin: 0 auto 35px; 
+            font-weight: 400; 
+            color: var(--amarelo-industrial); 
+            height: 1.6em; /* Altura fixa para evitar pulos no layout */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .fade { opacity: 0; transition: opacity 0.5s ease-in-out; }
         .fade.show { opacity: 1; }
 
-        .btn { background: var(--amarelo-industrial); color: var(--azul-marinho); padding: 16px 40px; text-decoration: none; font-weight: 700; border-radius: 4px; transition: var(--transicao); display: inline-block; text-transform: uppercase; border: none; cursor: pointer; }
-        .btn:hover { background: var(--branco); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        /* Botão Minimalista */
+        .btn { 
+            background: var(--amarelo-industrial); 
+            color: var(--azul-marinho); 
+            padding: 12px 28px; /* Reduzido conforme pedido */
+            text-decoration: none; 
+            font-weight: 700; 
+            border-radius: 3px; 
+            transition: var(--transicao); 
+            display: inline-block; 
+            text-transform: uppercase; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        .btn:hover { background: var(--branco); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
         /* Seções */
         section { padding: 80px 0; }
@@ -153,9 +202,14 @@
 
         /* Estilos Mobile Específicos */
         @media (max-width: 768px) {
-            header .container { padding: 0 5px; } /* Ajuste fino para aproximar logotipo e menu da borda */
-            .nav-container { padding: 0; }
-            .menu-toggle { display: block; margin-right: 0; padding: 5px; } /* Hamburger colado no canto */
+            header .container { padding: 0; } /* Remove padding total para colar nas bordas */
+            .nav-container { padding: 0 10px 0 5px; width: 100%; } /* Ajuste fino para os lados */
+            
+            .menu-toggle { 
+                display: block; 
+                margin-right: -2px; /* Força o ícone a encostar no canto direito */
+                padding: 10px; 
+            }
             
             nav ul { 
                 display: none; position: absolute; top: 100%; left: 0; width: 100%; 
@@ -294,9 +348,9 @@
                     <div class="logo-text">ART SUB <span>ENGENHARIA</span></div>
                 </a>
             </div>
-            <div class="menu-toggle" id="mobile-menu-btn">
+            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Menu principal">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
             <nav id="nav-menu">
                 <ul>
                     <li><a href="#inicio">INÍCIO</a></li>
@@ -311,6 +365,7 @@
 
     <!-- Hero -->
     <section id="inicio" class="hero">
+        <div class="bubbles" id="bubble-container"></div>
         <div class="hero-content">
             <h1>Engenharia Subaquática em Jacareí SP</h1>
             <p id="hero-rotating-text" class="hero-copy fade show">Limpeza de Reservatórios sem Esvaziar</p>
@@ -506,24 +561,45 @@
     </a>
 
     <script>
-        // Copy Rotativa com Efeito Fade (Melhor Estrutura para SEO)
+        // Copy Rotativa com Efeito Fade
         const texts = [
-            "Limpeza de reservatórios sem esvaziar",
-            "Inspeção subaquática com registro técnico",
-            "Recuperação estrutural submersa",
-            "Engenharia subaquática para indústrias e condomínios"
+            "Limpeza de Reservatórios sem Esvaziar",
+            "Inspeção Subaquática Profissional",
+            "Recuperação Estrutural Submersa",
+            "Engenharia Subaquática para Indústrias e Condomínios"
         ];
         let textIdx = 0;
         const textElem = document.getElementById("hero-rotating-text");
 
         setInterval(() => {
-            textElem.classList.remove("show"); // Inicia o fade out
+            textElem.classList.remove("show");
             setTimeout(() => {
                 textIdx = (textIdx + 1) % texts.length;
                 textElem.textContent = texts[textIdx];
-                textElem.classList.add("show"); // Inicia o fade in
-            }, 500); // Aguarda metade do tempo da transição CSS para trocar o texto
+                textElem.classList.add("show");
+            }, 500);
         }, 4000);
+
+        // Gerador de Bolhas para o Hero
+        function createBubbles() {
+            const container = document.getElementById('bubble-container');
+            const bubbleCount = 15;
+            
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                
+                const size = Math.random() * 15 + 5 + 'px';
+                bubble.style.width = size;
+                bubble.style.height = size;
+                bubble.style.left = Math.random() * 100 + '%';
+                bubble.style.animationDuration = Math.random() * 10 + 10 + 's';
+                bubble.style.animationDelay = Math.random() * 15 + 's';
+                
+                container.appendChild(bubble);
+            }
+        }
+        createBubbles();
 
         // Menu Mobile Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
