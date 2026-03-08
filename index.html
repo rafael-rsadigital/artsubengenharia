@@ -38,13 +38,13 @@
     <meta name="twitter:description" content="Limpeza de reservatórios e engenharia subaquática sem esvaziamento. Atendimento técnico especializado.">
     <meta name="twitter:image" content="https://artsubengenharia.com.br/assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg">
 
-    <!-- Preload da imagem hero para performance (LCP) -->
+    <!-- Preloads e Preconnects para Performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preload" as="image" href="assets/img/servico-subaquatico-background.webp">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-    <!-- Fonts e Ícones -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -194,13 +194,13 @@
 
         /* Regiões Expansíveis */
         .regions { background: #eef2f5; text-align: center; }
-        .regions .section-title { position: relative; display: inline-block; padding-bottom: 15px; margin-bottom: 20px; }
+        .regions .section-title { position: relative; display: inline-block; padding-bottom: 15px; margin-bottom: 20px; text-transform: none; }
         .regions .section-title::after { content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background: var(--amarelo-industrial); }
         .regions-intro { max-width: 900px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--azul-marinho); font-weight: 400; }
         
         .collapsible-regions { max-width: 800px; margin: 0 auto; text-align: left; }
         details { background: var(--branco); margin-bottom: 10px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #ddd; }
-        summary { padding: 15px 20px; cursor: pointer; font-weight: 700; color: var(--azul-marinho); list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+        summary { padding: 15px 20px; cursor: pointer; font-weight: 700; color: var(--azul-marinho); list-style: none; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
         summary:hover { background: #f9f9f9; }
         summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 0.8rem; transition: transform 0.3s; }
         details[open] summary::after { transform: rotate(180deg); }
@@ -249,13 +249,13 @@
 
         /* Estilos Mobile Específicos - AJUSTE FINAL DO HAMBURGER */
         @media (max-width: 768px) {
-            header .container { padding: 0 !important; } /* Zera padding lateral do header container */
-            .nav-container { padding: 0 0 0 10px !important; width: 100%; } /* Só padding na esquerda para a logo */
+            header .container { padding: 0 !important; } 
+            .nav-container { padding: 0 0 0 10px !important; width: 100%; } 
             
             .menu-toggle { 
                 display: block; 
-                margin-right: 0 !important; /* Totalmente encostado */
-                padding: 10px 10px 10px 15px; /* Padding interno apenas para área de clique, ícone no canto */
+                margin-right: 0 !important; 
+                padding: 10px 10px 10px 15px; 
                 text-align: right;
             }
             
@@ -278,7 +278,7 @@
         }
     </style>
 
-    <!-- SCHEMA.ORG COMPLETADO (LocalBusiness + WebSite) -->
+    <!-- SCHEMA.ORG COMPLETADO (LocalBusiness + WebSite + BreadcrumbList) -->
     <script type="application/ld+json">
     [
       {
@@ -303,11 +303,16 @@
           "longitude": -45.9672
         },
         "areaServed": [
-          "Vale do Paraíba",
-          "Litoral Norte de São Paulo",
-          "Litoral Sul de São Paulo",
-          "Sul de Minas",
-          "Sul do Rio de Janeiro"
+          { "@type": "AdministrativeArea", "name": "Jacareí" },
+          { "@type": "AdministrativeArea", "name": "São José dos Campos" },
+          { "@type": "AdministrativeArea", "name": "Taubaté" },
+          { "@type": "AdministrativeArea", "name": "Caçapava" },
+          { "@type": "AdministrativeArea", "name": "Pindamonhangaba" },
+          { "@type": "AdministrativeArea", "name": "Guaratinguetá" },
+          { "@type": "AdministrativeArea", "name": "Caraguatatuba" },
+          { "@type": "AdministrativeArea", "name": "Ubatuba" },
+          { "@type": "AdministrativeArea", "name": "Santos" },
+          { "@type": "AdministrativeArea", "name": "Resende" }
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -344,6 +349,16 @@
           "target": "https://artsubengenharia.com.br/?s={search_term_string}",
           "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://artsubengenharia.com.br/"
+        }]
       }
     ]
     </script>
@@ -495,10 +510,10 @@
         </div>
     </section>
 
-    <!-- Áreas de Atuação -->
+    <!-- Regiões (SEO REGIONAL REFORÇADO) -->
     <section id="regioes" class="regions">
         <div class="container">
-            <h2 class="section-title">ÁREAS DE ATUAÇÃO</h2>
+            <h2 class="section-title">Engenharia Subaquática no Vale do Paraíba e Litoral de SP</h2>
             <p class="regions-intro">
                 A ART SUB atende empresas, condomínios e indústrias em diversas cidades do interior de São Paulo, litoral e regiões próximas.
             </p>
@@ -576,9 +591,9 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
+    <!-- WhatsApp Float Corrigido -->
     <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
