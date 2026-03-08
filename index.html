@@ -71,15 +71,19 @@
         /* Menu Hamburger */
         .menu-toggle { display: none; color: var(--branco); font-size: 2.2rem; cursor: pointer; }
 
-        /* Hero com Suporte a Transição Suave */
+        /* Hero */
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('assets/img/servico-subaquatico-background.webp') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--branco); padding-top: 80px;
-            transition: background-image 1.5s ease-in-out; /* Transição suave de fundo */
         }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 20px; color: var(--branco); line-height: 1.2; text-transform: none; padding: 0 10px; }
-        .hero-content p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 35px; font-weight: 300; padding: 0 20px; }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 10px; color: var(--branco); line-height: 1.2; text-transform: none; padding: 0 10px; }
+        
+        /* Texto Rotativo com Fade */
+        .hero-copy { font-size: 1.3rem; max-width: 800px; margin: 0 auto 35px; font-weight: 400; color: var(--amarelo-industrial); min-height: 1.6em; }
+        .fade { opacity: 0; transition: opacity 0.5s ease-in-out; }
+        .fade.show { opacity: 1; }
+
         .btn { background: var(--amarelo-industrial); color: var(--azul-marinho); padding: 16px 40px; text-decoration: none; font-weight: 700; border-radius: 4px; transition: var(--transicao); display: inline-block; text-transform: uppercase; border: none; cursor: pointer; }
         .btn:hover { background: var(--branco); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
@@ -109,7 +113,7 @@
         .about-img-box { border: 4px solid var(--amarelo-industrial); border-radius: 8px; overflow: hidden; }
         .about-img-box img { width: 100%; display: block; }
 
-        /* FAQ Estilizado */
+        /* FAQ */
         .faq-container { max-width: 900px; margin: 0 auto; }
         .faq-item { background: var(--branco); margin-bottom: 10px; border-radius: 5px; border-left: 5px solid var(--azul-marinho); transition: var(--transicao); }
         .faq-question { padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: var(--azul-marinho); font-size: 0.95rem; }
@@ -141,8 +145,7 @@
         .rsa-link:hover { color: var(--branco); }
 
         /* WhatsApp */
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: var(--transicao); }
-        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
         /* Lightbox */
         .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: pointer; }
@@ -150,9 +153,9 @@
 
         /* Estilos Mobile Específicos */
         @media (max-width: 768px) {
-            header .container { padding: 0 10px; } /* Aproxima logotipo e menu das bordas */
+            header .container { padding: 0 5px; } /* Ajuste fino para aproximar logotipo e menu da borda */
             .nav-container { padding: 0; }
-            .menu-toggle { display: block; margin-right: 0; } /* Encosta no canto direito */
+            .menu-toggle { display: block; margin-right: 0; padding: 5px; } /* Hamburger colado no canto */
             
             nav ul { 
                 display: none; position: absolute; top: 100%; left: 0; width: 100%; 
@@ -164,7 +167,7 @@
             nav ul li a { display: block; padding: 15px; }
 
             .hero-content h1 { font-size: 1.8rem; }
-            .hero-content p { font-size: 0.95rem; }
+            .hero-copy { font-size: 1rem; }
             .section-title { font-size: 1.6rem; }
             
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -306,11 +309,11 @@
         </div>
     </header>
 
-    <!-- Hero com Background Slider -->
+    <!-- Hero -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Engenharia Subaquática em Jacareí SP | Limpeza de Reservatórios sem Esvaziar</h1>
-            <p>A Art Sub une o rigor da Engenharia Civil com a expertise do Mergulho Comercial para realizar limpezas técnicas e inspeções em reservatórios ativos.</p>
+            <h1>Engenharia Subaquática em Jacareí SP</h1>
+            <p id="hero-rotating-text" class="hero-copy fade show">Limpeza de Reservatórios sem Esvaziar</p>
             <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="btn" target="_blank">Solicitar Orçamento Técnico</a>
         </div>
     </section>
@@ -319,7 +322,7 @@
     <section id="servicos" class="container">
         <div class="section-header">
             <h2 class="section-title">Serviços Especializados</h2>
-            <p>Engenharia Civil e tecnologia subaquática para garantir a continuidade operacional. Clique para ampliar.</p>
+            <p>Engenharia Civil e tecnologia subaquática para garantir a continuidade operacional.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -368,7 +371,7 @@
         </div>
     </section>
 
-    <!-- FAQ COMPLETO (10 PERGUNTAS RESTAURADAS) -->
+    <!-- FAQ -->
     <section id="faq">
         <div class="container">
             <div class="section-header">
@@ -468,7 +471,7 @@
                 <p><i class="fab fa-whatsapp"></i> 12 99800-5945</p>
                 <p><i class="fas fa-envelope"></i> contato@artsubengenharia.com.br</p>
                 <p><i class="fas fa-map-marker-alt"></i> Jacareí - SP</p>
-                <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; height: 250px;">
+                <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; height: 200px;">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205825.2489051146!2d-45.973631950000005!3d-23.29599545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8407c7775d8d81ef%3A0x4eee7330fa40413d!2sArt%20Sub%20Engenharia%20Subaquatica!5e1!3m2!1spt-BR!2sbr!4v1772922444266!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
@@ -503,27 +506,24 @@
     </a>
 
     <script>
-        // Hero Background Slider com Transição Suave
-        const heroImages = [
-            'assets/img/servico-subaquatico-background.webp',
-            'assets/img/limpeza-de-reservatorio-sem-esvaziar.jpg',
-            'assets/img/inspecao-subaquatica-fotografica.jpg',
-            'assets/img/recuperacao-estrutural-subaquatica.jpg'
+        // Copy Rotativa com Efeito Fade (Melhor Estrutura para SEO)
+        const texts = [
+            "Limpeza de reservatórios sem esvaziar",
+            "Inspeção subaquática com registro técnico",
+            "Recuperação estrutural submersa",
+            "Engenharia subaquática para indústrias e condomínios"
         ];
-        let currentImgIdx = 0;
-        const heroElement = document.querySelector('.hero');
+        let textIdx = 0;
+        const textElem = document.getElementById("hero-rotating-text");
 
-        function rotateHeroBackground() {
-            currentImgIdx = (currentImgIdx + 1) % heroImages.length;
-            // Cria um novo objeto de imagem para pré-carregar antes de trocar, garantindo a suavidade
-            const img = new Image();
-            img.src = heroImages[currentImgIdx];
-            img.onload = () => {
-                heroElement.style.backgroundImage = `linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('${heroImages[currentImgIdx]}')`;
-            };
-        }
-
-        setInterval(rotateHeroBackground, 5000);
+        setInterval(() => {
+            textElem.classList.remove("show"); // Inicia o fade out
+            setTimeout(() => {
+                textIdx = (textIdx + 1) % texts.length;
+                textElem.textContent = texts[textIdx];
+                textElem.classList.add("show"); // Inicia o fade in
+            }, 500); // Aguarda metade do tempo da transição CSS para trocar o texto
+        }, 4000);
 
         // Menu Mobile Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
