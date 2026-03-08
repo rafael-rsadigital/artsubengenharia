@@ -16,7 +16,7 @@
     <meta property="og:description" content="Limpeza de reservatórios e manutenção submersa sem interromper o abastecimento. Tecnologia de mergulho comercial e engenharia.">
     <meta property="og:image" content="https://artsubengenharia.com.br/assets/img/logotipo-art-sub-engenharia-subaquatica-jacarei.jpg">
 
-    <!-- Preload das imagens principais para performance (LCP) -->
+    <!-- Preload da imagem hero para performance (LCP) -->
     <link rel="preload" as="image" href="assets/img/servico-subaquatico-background.webp">
 
     <!-- Fonts e Ícones -->
@@ -69,14 +69,14 @@
         nav ul li a:hover { color: var(--amarelo-industrial); }
 
         /* Menu Hamburger */
-        .menu-toggle { display: none; color: var(--branco); font-size: 2rem; cursor: pointer; }
+        .menu-toggle { display: none; color: var(--branco); font-size: 2.2rem; cursor: pointer; }
 
-        /* Hero com Efeito Slider */
+        /* Hero com Suporte a Transição Suave */
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('assets/img/servico-subaquatico-background.webp') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; color: var(--branco); padding-top: 80px;
-            transition: background-image 1s ease-in-out; /* Transição suave entre backgrounds */
+            transition: background-image 1.5s ease-in-out; /* Transição suave de fundo */
         }
         .hero-content h1 { font-size: 3rem; margin-bottom: 20px; color: var(--branco); line-height: 1.2; text-transform: none; padding: 0 10px; }
         .hero-content p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 35px; font-weight: 300; padding: 0 20px; }
@@ -109,7 +109,7 @@
         .about-img-box { border: 4px solid var(--amarelo-industrial); border-radius: 8px; overflow: hidden; }
         .about-img-box img { width: 100%; display: block; }
 
-        /* FAQ */
+        /* FAQ Estilizado */
         .faq-container { max-width: 900px; margin: 0 auto; }
         .faq-item { background: var(--branco); margin-bottom: 10px; border-radius: 5px; border-left: 5px solid var(--azul-marinho); transition: var(--transicao); }
         .faq-question { padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: var(--azul-marinho); font-size: 0.95rem; }
@@ -141,7 +141,8 @@
         .rsa-link:hover { color: var(--branco); }
 
         /* WhatsApp */
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: var(--transicao); }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         /* Lightbox */
         .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: pointer; }
@@ -149,9 +150,9 @@
 
         /* Estilos Mobile Específicos */
         @media (max-width: 768px) {
-            .container { padding: 0 15px; }
-            .nav-container { padding: 0 5px; } /* Ajustado mais para o canto conforme solicitado */
-            .menu-toggle { display: block; margin-right: 5px; }
+            header .container { padding: 0 10px; } /* Aproxima logotipo e menu das bordas */
+            .nav-container { padding: 0; }
+            .menu-toggle { display: block; margin-right: 0; } /* Encosta no canto direito */
             
             nav ul { 
                 display: none; position: absolute; top: 100%; left: 0; width: 100%; 
@@ -318,7 +319,7 @@
     <section id="servicos" class="container">
         <div class="section-header">
             <h2 class="section-title">Serviços Especializados</h2>
-            <p>Engenharia Civil e tecnologia subaquática para garantir a continuidade operacional.</p>
+            <p>Engenharia Civil e tecnologia subaquática para garantir a continuidade operacional. Clique para ampliar.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -367,7 +368,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ COMPLETO (10 PERGUNTAS RESTAURADAS) -->
     <section id="faq">
         <div class="container">
             <div class="section-header">
@@ -467,7 +468,7 @@
                 <p><i class="fab fa-whatsapp"></i> 12 99800-5945</p>
                 <p><i class="fas fa-envelope"></i> contato@artsubengenharia.com.br</p>
                 <p><i class="fas fa-map-marker-alt"></i> Jacareí - SP</p>
-                <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; height: 200px;">
+                <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; height: 250px;">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205825.2489051146!2d-45.973631950000005!3d-23.29599545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8407c7775d8d81ef%3A0x4eee7330fa40413d!2sArt%20Sub%20Engenharia%20Subaquatica!5e1!3m2!1spt-BR!2sbr!4v1772922444266!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
@@ -502,7 +503,7 @@
     </a>
 
     <script>
-        // Hero Background Slider
+        // Hero Background Slider com Transição Suave
         const heroImages = [
             'assets/img/servico-subaquatico-background.webp',
             'assets/img/limpeza-de-reservatorio-sem-esvaziar.jpg',
@@ -514,11 +515,14 @@
 
         function rotateHeroBackground() {
             currentImgIdx = (currentImgIdx + 1) % heroImages.length;
-            // Mantém o gradiente de overlay para legibilidade do texto
-            heroElement.style.backgroundImage = `linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('${heroImages[currentImgIdx]}')`;
+            // Cria um novo objeto de imagem para pré-carregar antes de trocar, garantindo a suavidade
+            const img = new Image();
+            img.src = heroImages[currentImgIdx];
+            img.onload = () => {
+                heroElement.style.backgroundImage = `linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('${heroImages[currentImgIdx]}')`;
+            };
         }
 
-        // Inicia o slider após o carregamento
         setInterval(rotateHeroBackground, 5000);
 
         // Menu Mobile Toggle
