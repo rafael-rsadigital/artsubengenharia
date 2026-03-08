@@ -198,7 +198,7 @@
         .rsa-link { color: var(--amarelo-industrial); text-decoration: none; font-weight: 700; transition: var(--transicao); }
         .rsa-link:hover { color: var(--branco); }
 
-        /* WhatsApp Ajustado - Corrigindo a "linha branca" */
+        /* WhatsApp Ajustado - Sem listra branca */
         .whatsapp-float { 
             position: fixed; 
             bottom: 20px; 
@@ -215,25 +215,25 @@
             z-index: 1000; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
             transition: var(--transicao); 
-            text-decoration: none !important; /* Remove qualquer underline de link */
+            text-decoration: none !important; 
             outline: none;
         }
         .whatsapp-float:hover { transform: scale(1.1); color: white; text-decoration: none; }
-        .whatsapp-float i { line-height: 1; margin-top: 1px; } /* Ajuste fino de centralização do ícone */
+        .whatsapp-float i { line-height: 1; margin-top: 1px; }
 
         /* Lightbox */
         .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: pointer; }
         .modal-content { max-width: 90%; max-height: 85%; border: 3px solid var(--amarelo-industrial); border-radius: 8px; }
 
-        /* Estilos Mobile Específicos */
+        /* Estilos Mobile Específicos - AJUSTE FINAL DO HAMBURGER */
         @media (max-width: 768px) {
-            header .container { padding: 0; }
-            .nav-container { padding: 0 0 0 10px; width: 100%; }
+            header .container { padding: 0 !important; } /* Zera padding lateral do header container */
+            .nav-container { padding: 0 0 0 10px !important; width: 100%; } /* Só padding na esquerda para a logo */
             
             .menu-toggle { 
                 display: block; 
-                margin-right: 0;
-                padding: 10px 10px 10px 15px;
+                margin-right: 0 !important; /* Totalmente encostado */
+                padding: 10px 10px 10px 15px; /* Padding interno apenas para área de clique, ícone no canto */
                 text-align: right;
             }
             
@@ -309,7 +309,7 @@
         { "@type": "Question", "name": "Quais tipos de reservatórios?", "acceptedAnswer": { "@type": "Answer", "text": "Metálicos, concreto e tanques industriais em operação." }},
         { "@type": "Question", "name": "Quais setores atendem?", "acceptedAnswer": { "@type": "Answer", "text": "Condomínios, indústrias, hospitais e órgãos públicos." }},
         { "@type": "Question", "name": "Oferecem atendimento emergencial?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, atendimento 24 horas para situações críticas." }},
-        { "@type": "Question", "name": "Trabalham com contrato de manutenção?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, oferecemos contratos anuais para gestão preventiva." }},
+        { "@type": "Question", "name": "Trabalham com contrato de manutenção?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, oferecemos contratos anuais de manutenção preventiva." }},
         { "@type": "Question", "name": "Quais outros serviços?", "acceptedAnswer": { "@type": "Answer", "text": "Recuperação de fundações, soldagem e montagens submersas." }},
         { "@type": "Question", "name": "Onde atendem?", "acceptedAnswer": { "@type": "Answer", "text": "Principalmente Sudeste do Brasil, com outras regiões sob consulta." }}
       ],
@@ -412,7 +412,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ COMPLETO (10 PERGUNTAS) -->
     <section id="faq">
         <div class="container">
             <div class="section-header">
@@ -434,7 +434,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Por que fazer manutenção preventiva em reservatórios de água? <i class="fas fa-plus"></i></div>
-                    <p class="faq-answer">A manutenção preventiva evita problemas como corrosão, fissuras estruturais e acúmulo de impurezas que podem comprometer a qualidade da água e a integridade do reservatório, aumentando a vida útil da estrutura e reduzindo custos com reparos emergenciais.</p>
+                    <p class="faq-answer">A manutenção preventiva evita problemas como corrosão, fissuras estruturais e acúmulo de impurezas que podem comprometer a qualidade da água e a integridade do reservatório. Além de aumentar a vida útil da estrutura, reduz custos com reparos emergenciais e garante segurança no abastecimento.</p>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Quais tipos de reservatórios podem receber manutenção subaquática? <i class="fas fa-plus"></i></div>
@@ -464,7 +464,7 @@
         </div>
     </section>
 
-    <!-- Áreas de Atuação -->
+    <!-- Áreas de Atuação (COMPLETO) -->
     <section id="regioes" class="regions">
         <div class="container">
             <h2 class="section-title">ÁREAS DE ATUAÇÃO</h2>
