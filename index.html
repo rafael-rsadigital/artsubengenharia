@@ -198,8 +198,28 @@
         .rsa-link { color: var(--amarelo-industrial); text-decoration: none; font-weight: 700; transition: var(--transicao); }
         .rsa-link:hover { color: var(--branco); }
 
-        /* WhatsApp */
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: var(--transicao); }
+        /* WhatsApp Ajustado - Corrigindo a "linha branca" */
+        .whatsapp-float { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background: #25d366; 
+            color: white; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 32px; 
+            z-index: 1000; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+            transition: var(--transicao); 
+            text-decoration: none !important; /* Remove qualquer underline de link */
+            outline: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); color: white; text-decoration: none; }
+        .whatsapp-float i { line-height: 1; margin-top: 1px; } /* Ajuste fino de centralização do ícone */
 
         /* Lightbox */
         .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: pointer; }
@@ -207,13 +227,13 @@
 
         /* Estilos Mobile Específicos */
         @media (max-width: 768px) {
-            header .container { padding: 0; } /* Remove padding lateral no header */
-            .nav-container { padding: 0 0 0 10px; width: 100%; } /* Mantém recuo na logo, mas zero na direita */
+            header .container { padding: 0; }
+            .nav-container { padding: 0 0 0 10px; width: 100%; }
             
             .menu-toggle { 
                 display: block; 
-                margin-right: 0; /* Totalmente colado no canto */
-                padding: 10px 10px 10px 15px; /* Remove padding-right para aproximar o ícone da borda */
+                margin-right: 0;
+                padding: 10px 10px 10px 15px;
                 text-align: right;
             }
             
@@ -444,7 +464,7 @@
         </div>
     </section>
 
-    <!-- Áreas de Atuação (RESTAURADO COMPLETO) -->
+    <!-- Áreas de Atuação -->
     <section id="regioes" class="regions">
         <div class="container">
             <h2 class="section-title">ÁREAS DE ATUAÇÃO</h2>
@@ -525,7 +545,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
+    <!-- WhatsApp Float Corrigido -->
     <a href="https://wa.me/5512998005945?text=Olá! Vim através do site e gostaria de um orçamento para serviços de engenharia subaquática." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
