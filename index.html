@@ -58,6 +58,7 @@
             --branco: #ffffff;
             --cinza-claro: #f4f7f9;
             --cinza-texto: #4a4a4a;
+            --google-yellow: #fbbc05;
             --transicao: all 0.3s ease-in-out;
         }
 
@@ -187,6 +188,44 @@
         .about-img-box { border: 4px solid var(--amarelo-industrial); border-radius: 8px; overflow: hidden; }
         .about-img-box img { width: 100%; display: block; }
 
+        /* Carrossel de Depoimentos */
+        .testimonials { background: var(--branco); overflow: hidden; position: relative; }
+        .carousel-wrapper { position: relative; display: flex; align-items: center; justify-content: center; }
+        .carousel-container { overflow: hidden; width: 100%; margin: 0 50px; }
+        .testimonials-track { 
+            display: flex; 
+            gap: 25px; 
+            transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95); 
+        }
+        .testimonial-card { 
+            flex: 0 0 calc(33.333% - 17px); /* 3 cards em desktop */
+            background: #fff; 
+            padding: 25px; 
+            border-radius: 12px; 
+            border: 1px solid #e0e0e0; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+            display: flex;
+            flex-direction: column;
+            min-height: 250px;
+        }
+        .testi-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .testi-avatar { width: 45px; height: 45px; background: var(--azul-marinho); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0; }
+        .testi-name { font-weight: 700; color: var(--azul-marinho); text-transform: capitalize; font-size: 1rem; }
+        .stars { color: var(--google-yellow); font-size: 0.9rem; margin-bottom: 10px; }
+        .testi-text { font-size: 0.9rem; color: #555; line-height: 1.5; font-style: italic; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+
+        /* Botões Carrossel */
+        .carousel-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: var(--azul-marinho); color: #fff;
+            width: 40px; height: 40px; border-radius: 50%; border: none;
+            cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
+            transition: var(--transicao); opacity: 0.7;
+        }
+        .carousel-btn:hover { opacity: 1; background: var(--amarelo-industrial); color: var(--azul-marinho); }
+        .prev-btn { left: 0; }
+        .next-btn { right: 0; }
+
         /* FAQ Estilizado */
         .faq-container { max-width: 900px; margin: 0 auto; }
         .faq-item { background: var(--branco); margin-bottom: 10px; border-radius: 5px; border-left: 5px solid var(--azul-marinho); transition: var(--transicao); }
@@ -227,7 +266,7 @@
         .rsa-link { color: var(--amarelo-industrial); text-decoration: none; font-weight: 700; transition: var(--transicao); }
         .rsa-link:hover { color: var(--branco); }
 
-        /* WhatsApp Ajustado - Sem listra branca */
+        /* WhatsApp Ajustado */
         .whatsapp-float { 
             position: fixed; 
             bottom: 20px; 
@@ -254,7 +293,11 @@
         .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: pointer; }
         .modal-content { max-width: 90%; max-height: 85%; border: 3px solid var(--amarelo-industrial); border-radius: 8px; }
 
-        /* Estilos Mobile Específicos - AJUSTE FINAL DO HAMBURGER */
+        /* Estilos Mobile */
+        @media (max-width: 992px) {
+            .testimonial-card { flex: 0 0 calc(50% - 13px); } /* 2 cards em tablet */
+        }
+
         @media (max-width: 768px) {
             header .container { padding: 0 !important; } 
             .nav-container { padding: 0 !important; width: 100%; } 
@@ -283,10 +326,14 @@
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
             .about-engineering h2 { text-align: center; }
             .about-img-box { order: -1; }
+
+            .carousel-container { margin: 0 10px; }
+            .testimonial-card { flex: 0 0 100%; } /* 1 card em mobile */
+            .carousel-btn { width: 35px; height: 35px; }
         }
     </style>
 
-    <!-- SCHEMA.ORG COMPLETADO (LocalBusiness + WebSite + BreadcrumbList + FAQ + Services) -->
+    <!-- SCHEMA.ORG COMPLETADO -->
     <script type="application/ld+json">
     [
       {
@@ -484,6 +531,107 @@
         </div>
     </section>
 
+    <!-- Depoimentos (Carrossel) -->
+    <section id="depoimentos" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O que nossos clientes dizem sobre a Art Sub Engenharia</h2>
+            </div>
+            
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="prevTesti" aria-label="Depoimento anterior"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="carousel-container">
+                    <div class="testimonials-track" id="testiTrack">
+                        <!-- Rodrigo Lamas -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">R</div>
+                                <div class="testi-name">Rodrigo Lamas</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Excelente experiência com a Art Sub Engenharia. A equipe demonstra muito profissionalismo, organização e conhecimento técnico em serviços de engenharia submersa. Recomendo para quem precisa de serviços especializados.</p>
+                        </div>
+                        <!-- Alexandre Mansur -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">A</div>
+                                <div class="testi-name">Alexandre Mansur</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Uma empresa com diferenciais ímpares, bom atendimento, compromisso e atendimento justo pela necessidade. Obrigado por tanto! Um parecer técnico esclarecedor e pontual.</p>
+                        </div>
+                        <!-- Espaço Diamante -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">E</div>
+                                <div class="testi-name">Espaço Diamante</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Uma das melhores empresas de engenharia subaquática que conheci. Excelente trabalho.</p>
+                        </div>
+                        <!-- Rafael Antonio -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">R</div>
+                                <div class="testi-name">Rafael Antonio</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Alta qualidade nos serviços, profissionalismo fora do normal, outro patamar. Excelência em tudo: atendimento, planejamento, cumprimento dentro do prazo com garantia, super indico!</p>
+                        </div>
+                        <!-- Gabriel de Oliveira -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">G</div>
+                                <div class="testi-name">Gabriel de Oliveira</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Esta empresa apresenta um pronto atendimento excelente e com profissionais qualificado uma aprovação de confiança!</p>
+                        </div>
+                        <!-- Nadia Rittes -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">N</div>
+                                <div class="testi-name">Nadia Rittes</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Fiquei impressionada com a competência da empresa desde o primeiro contato. Muito satisfeita com tudo. Super recomendo.</p>
+                        </div>
+                        <!-- Girley Beltrao -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">G</div>
+                                <div class="testi-name">Girley Beltrao</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Empresa muito séria com profissionais altamente qualificados fui muito bem atendido e indico pra todos que precisarem de trabalhos subaquáticos.</p>
+                        </div>
+                        <!-- Cadrobbi Representações -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">C</div>
+                                <div class="testi-name">Cadrobbi Representações</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Profissionais altamente qualificado, trabalho muito bem elaborado com precisão. Quando precisei fui muito bem atendida e com muitas indicações. Super indico!!</p>
+                        </div>
+                        <!-- ABILIO RIBEIRO DOS SANTOS -->
+                        <div class="testimonial-card">
+                            <div class="testi-header">
+                                <div class="testi-avatar">A</div>
+                                <div class="testi-name">Abilio Ribeiro Dos Santos</div>
+                            </div>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="testi-text">Excelente empresa, com comprometimento, profissionalismo, que pensa no meio ambiente e realiza as atividades com segurança. Parabéns!!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" id="nextTesti" aria-label="Próximo depoimento"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
     <section id="faq">
         <div class="container">
@@ -514,7 +662,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Quais setores atendem esse tipo de serviço? <i class="fas fa-plus"></i></div>
-                    <p class="faq-answer">A ART SUB atende condomínios residenciais, indústrias, hospitais, escolas, empresas de saneamento, órgãos públicos, prefeituras e empreendimentos que dependem de reservatórios de água para operação contínua.</p>
+                    <p class="faq-answer">A ART SUB atende condomínios residenciais, indústrias, hospitais, escolas, empresas de saneamento, órgãos públicos, prefeituras e empreendimentos que dependem de reservatórios de água para operation contínua.</p>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">A empresa oferece atendimento emergencial? <i class="fas fa-plus"></i></div>
@@ -683,11 +831,12 @@
             link.addEventListener('click', () => navMenu.classList.remove('active'));
         });
 
-        // Scroll e FAQ
+        // Scroll Header Effect
         window.addEventListener('scroll', () => {
             document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
+        // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
@@ -701,6 +850,52 @@
                     button.querySelector('i').classList.replace('fa-plus', 'fa-minus');
                 }
             });
+        });
+
+        // Lógica do Carrossel de Depoimentos
+        const track = document.getElementById('testiTrack');
+        const prevBtn = document.getElementById('prevTesti');
+        const nextBtn = document.getElementById('nextTesti');
+        const cards = Array.from(track.children);
+        let currentIndex = 0;
+
+        function getVisibleCards() {
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 992) return 2;
+            return 3;
+        }
+
+        function updateCarousel() {
+            const visibleCards = getVisibleCards();
+            const cardWidth = cards[0].getBoundingClientRect().width;
+            const gap = 25; // gap definido no CSS
+            const moveX = currentIndex * (cardWidth + gap);
+            track.style.transform = `translateX(-${moveX}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const visibleCards = getVisibleCards();
+            if (currentIndex < cards.length - visibleCards) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Repete quando acaba
+            }
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const visibleCards = getVisibleCards();
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = cards.length - visibleCards; // Volta pro fim
+            }
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', () => {
+            currentIndex = 0;
+            updateCarousel();
         });
 
         // Lightbox
