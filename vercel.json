@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/engenharia-subaquatica-sao-jose-dos-campos.html",
+      "destination": "/engenharia-subaquatica-sao-jose-dos-campos/",
+      "permanent": true
+    },
+    {
+      "source": "/engenharia-subaquatica-litoral-sp-rj.html",
+      "destination": "/engenharia-subaquatica-litoral-sp-rj/",
+      "permanent": true
+    }
+  ]
+}
